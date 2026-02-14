@@ -2,6 +2,9 @@
 
 This repository contains the **Helix Cloud** web platform, a professional landing page designed with a serverless architecture and automated deployment on Microsoft Azure.
 
+> [!TIP]
+> **Free Tier Friendly**: This entire stack is designed to run within the **Free Tiers** of Azure, Cloudflare, and Google reCAPTCHA. You can host this professional portfolio with **zero monthly costs**.
+
 ## 🏗️ Project Architecture
 
 The project follows a decoupled modern infrastructure approach:
@@ -33,7 +36,18 @@ The project follows a decoupled modern infrastructure approach:
 - **GitHub Actions**: CI/CD pipeline for automatic deployment to Azure Static Web Apps.
 - **Azure Communication Services**: Professional email delivery system.
 
-## 🚀 Local Deployment
+### � Documentation Links
+
+| Technology | Documentation |
+| :--- | :--- |
+| **Astro** | [docs.astro.build](https://docs.astro.build/) |
+| **Azure Functions** | [learn.microsoft.com/azure/azure-functions](https://learn.microsoft.com/en-us/azure/azure-functions/) |
+| **Cosmos DB** | [learn.microsoft.com/azure/cosmos-db](https://learn.microsoft.com/en-us/azure/cosmos-db/) |
+| **Terraform** | [developer.hashicorp.com/terraform/docs](https://developer.hashicorp.com/terraform/docs) |
+| **Azure Static Web Apps** | [learn.microsoft.com/azure/static-web-apps](https://learn.microsoft.com/en-us/azure/static-web-apps/) |
+| **reCAPTCHA v3** | [developers.google.com/recaptcha](https://developers.google.com/recaptcha/docs/v3) |
+
+## �🚀 Local Deployment
 
 1. **Install dependencies**:
    ```bash
@@ -95,5 +109,18 @@ For infra-level configurations (like reCAPTCHA keys or database names), use the 
 - **Cosmos DB Firewall**: Restricted access only to Azure services and authorized IPs.
 - **HTTPS/Full Encryption**: Managed via Cloudflare.
 
+## 🌍 Open Source & Community
+
+This project is **Open Source**! I believe in sharing knowledge and providing tools that help other engineers showcase their work professionally and efficiently. 
+
+- **Contributions**: Feel free to open issues or pull requests to improve the template.
+- **Showcase**: If you use this template, I'd love to see it! 
+
+### ☁️ Don't have an Azure Account?
+
+You can start for free! Azure offers a **Free Account** that includes 12 months of popular free services, $200 credit, and 55+ other services that are free always.
+
+👉 **[Create your Azure Free Account here](https://azure.microsoft.com/free/)**
+
 ---
-**Developed by Héctor Rodríguez | 2026**
+**Developed with ❤️ for the DevOps Community | 2026**
