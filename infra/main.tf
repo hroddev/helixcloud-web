@@ -69,7 +69,7 @@ resource "azurerm_static_web_app" "web" {
   app_settings = {
     "COSMOS_DB_CONNECTION_STRING" = azurerm_cosmosdb_account.db.primary_sql_connection_string
     "ACS_CONNECTION_STRING"       = azurerm_communication_service.acs.primary_connection_string
-    "SENDER_ADDRESS"              = "DoNotReply@${azurerm_email_communication_service_domain.managed.from_sender_domain_name}"
+    "SENDER_ADDRESS"              = "DoNotReply@${azurerm_email_communication_service_domain.managed.from_sender_domain}"
     "NOTIFICATION_EMAIL"          = var.notification_email
   }
 
