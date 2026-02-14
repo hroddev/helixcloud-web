@@ -1,0 +1,26 @@
+# Helix Cloud - Terraform Variables Template
+# Copy this file to 'terraform.tfvars' and fill in your values.
+# NEVER commit the actual 'terraform.tfvars' file to version control.
+
+# --- Project Configuration ---
+project_name = "helixcloud"
+environment  = "prod"
+location     = "eastus2"
+
+# --- Common Tags ---
+tags = {
+  Project     = "Helix Cloud Website"
+  Environment = "Production"
+  ManagedBy   = "Terraform"
+  Owner       = "Your Name"
+}
+
+# --- Security & Notifications ---
+# The email address where you want to receive contact form notifications.
+notification_email = "your-email@example.com"
+
+# --- Azure Authentication (Optional if using Azure CLI) ---
+# If you are not using 'az login', you might need these in your environment 
+# rather than in this file. Recommended: Use Environment Variables for these.
+# subscription_id = "00000000-0000-0000-0000-000000000000"
+# tenant_id       = "00000000-0000-0000-0000-000000000000"

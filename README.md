@@ -48,6 +48,8 @@ The project follows a decoupled modern infrastructure approach:
 3. **Deploy Infrastructure**:
    ```bash
    cd infra
+   cp terraform.tfvars.example terraform.tfvars
+   # Edit terraform.tfvars with your configuration
    terraform init
    terraform apply
    ```
