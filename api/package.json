@@ -1,0 +1,15 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "description": "Helix Cloud Backend API",
+    "scripts": {
+        "start": "func start",
+        "test": "echo \"No tests yet...\""
+    },
+    "dependencies": {
+        "@azure/functions": "^4.0.0",
+        "@azure/cosmos": "^4.0.0"
+    },
+    "devDependencies": {},
+    "main": "src/functions/*.js"
+}

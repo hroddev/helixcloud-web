@@ -1,0 +1,22 @@
+version: "3"
+
+tasks:
+  setup:
+    desc: Install dependencies
+    cmds:
+      - npm install
+
+  init-tailwind:
+    desc: Add Tailwind CSS integration
+    cmds:
+      - npx astro add tailwind --yes
+
+  dev:
+    desc: Run development server
+    cmds:
+      - npm run dev
+
+  build:
+    desc: Build for production
+    cmds:
+      - npm run build

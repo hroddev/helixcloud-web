@@ -1,0 +1,92 @@
+---
+const links = [
+  { name: "Services", href: "#services" },
+  { name: "About", href: "#about" },
+  { name: "Stack", href: "#stack" },
+  { name: "Contact", href: "#contact" },
+];
+---
+
+<nav
+  class="fixed w-full z-50 top-0 start-0 border-b border-white/5 bg-gray-950/80 backdrop-blur-md transition-all duration-300"
+  id="navbar"
+>
+  <div
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-4 md:px-12"
+  >
+    <a href="#top" class="flex items-center">
+      <!-- Logo Placeholder using SVG from user -->
+      <img
+        src="/helix-cloud-logo.webp"
+        class="h-12 md:h-16 w-auto transition-transform hover:scale-105"
+        alt="Helix Cloud Logo"
+      />
+    </a>
+    <div
+      class="flex items-center md:order-2 space-x-2 md:space-x-0 rtl:space-x-reverse"
+    >
+      <a
+        href="#contact"
+        class="hidden xs:block text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-xs md:text-sm px-3 py-2 md:px-5 md:py-2.5 text-center transition-all"
+      >
+        Get in Touch
+      </a>
+      <button
+        data-collapse-toggle="navbar-sticky"
+        type="button"
+        class="inline-flex items-center p-2 w-9 h-9 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600"
+        aria-controls="navbar-sticky"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"></path>
+        </svg>
+      </button>
+    </div>
+    <div
+      class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+      id="navbar-sticky"
+    >
+      <ul
+        class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-white/10 rounded-2xl bg-gray-950/90 md:bg-transparent backdrop-blur-lg md:backdrop-blur-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+      >
+        {
+          links.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class={`block py-3 px-4 md:p-0 text-gray-400 rounded-xl hover:bg-white/5 md:hover:bg-transparent md:hover:text-blue-500 transition-all duration-300 ${link.name === "Contact" ? "md:hidden" : ""}`}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const btn = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+  const menu = document.getElementById("navbar-sticky");
+
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  }
+</script>

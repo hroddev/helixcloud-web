@@ -1,0 +1,90 @@
+---
+const services = [
+    {
+        title: "Azure Architecture & Migration",
+        description:
+            "Designing scalable, resilient cloud foundations. Expert in migrating on-premise workloads to Azure with minimal downtime.",
+        icon: "cloud",
+        color: "from-blue-500 to-cyan-400",
+    },
+    {
+        title: "DevOps Automation (IaC)",
+        description:
+            "Building robust CI/CD pipelines using Azure DevOps, GitHub Actions, Terraform, and Bicep for reliable deployments.",
+        icon: "code",
+        color: "from-purple-500 to-indigo-500",
+    },
+    {
+        title: "Kubernetes (AKS)",
+        description:
+            "Orchestrating containerized applications with Azure Kubernetes Service. Managing clusters, microservices, and specialized workloads.",
+        icon: "cube",
+        color: "from-blue-600 to-blue-400",
+    },
+    {
+        title: "Observability & Monitoring",
+        description:
+            "Implementing full-stack monitoring with Azure Monitor, Prometheus, and Grafana to ensure 99.9% uptime and rapid incident response.",
+        icon: "chart",
+        color: "from-pink-500 to-rose-500",
+    },
+    {
+        title: "Hybrid Cloud Networking",
+        description:
+            "Connecting global branches securely using Azure Virtual WAN, VPN Gateway, and Fortinet SD-WAN integration.",
+        icon: "globe",
+        color: "from-emerald-400 to-cyan-500",
+    },
+    {
+        title: "Security & FinOps",
+        description:
+            "Optimizing cloud spend and hardening security posture through policy-driven governance and active cost management.",
+        icon: "shield",
+        color: "from-amber-400 to-orange-500",
+    },
+];
+---
+
+<section id="services" class="py-24 bg-[#050505]">
+    <div class="container mx-auto px-6 md:px-12">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">
+                Core <span class="text-blue-500">Capabilities</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Delivering enterprise-grade solutions tailored for the Azure
+                ecosystem.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {
+                services.map((service) => (
+                    <div class="p-8 rounded-2xl bg-black border border-white/10 hover:border-blue-500/30 transition-all duration-300 group">
+                        <div class="mb-6">
+                            <svg
+                                class="w-6 h-6 text-white group-hover:text-blue-400 transition-colors"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                                />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">
+                            {service.title}
+                        </h3>
+                        <p class="text-gray-400 leading-relaxed text-sm">
+                            {service.description}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
