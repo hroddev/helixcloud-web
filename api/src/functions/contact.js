@@ -74,6 +74,47 @@ app.http('contact', {
 
             context.extraOutputs.set(cosmosOutput, entry);
 
+            // 3. EMAIL NOTIFICATION (Azure Communication Services)
+            const connectionString = process.env.ACS_CONNECTION_STRING;
+            const senderAddress = process.env.SENDER_ADDRESS;
+            const recipientAddress = process.env.NOTIFICATION_EMAIL;
+
+            if (connectionString && senderAddress && recipientAddress) {
+                try {
+                    const { EmailClient } = require("@azure/communication-email");
+                    const client = new EmailClient(connectionString);
+
+                    const emailMessage = {
+                        senderAddress: senderAddress,
+                        content: {
+                            subject: `New Contact Form: ${body.name || 'Anonymous'}`,
+                            plainText: `Email: ${body.email}\nName: ${body.name || 'Anonymous'}\nMessage: ${body.message}\nIP: ${clientIp}`,
+                            html: `
+                                <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee;">
+                                    <h2 style="color: #2563eb;">New Contact Form Submission</h2>
+                                    <p><strong>Name:</strong> ${body.name || 'Anonymous'}</p>
+                                    <p><strong>Email:</strong> ${body.email}</p>
+                                    <p><strong>Message:</strong></p>
+                                    <div style="background: #f9fafb; padding: 15px; border-radius: 8px;">
+                                        ${body.message}
+                                    </div>
+                                    <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;" />
+                                    <p style="font-size: 12px; color: #6b7280;">Sent from helixcloud.dev | IP: ${clientIp}</p>
+                                </div>
+                            `,
+                        },
+                        recipients: {
+                            to: [{ address: recipientAddress }],
+                        },
+                    };
+
+                    await client.beginSend(emailMessage);
+                    context.log("Notification email sent successfully");
+                } catch (emailError) {
+                    context.log.error(`Failed to send notification email: ${emailError}`);
+                }
+            }
+
             return { status: 201, body: JSON.stringify({ message: "Message received successfully." }) };
         } catch (error) {
             context.log.error(`Error processing request: ${error}`);

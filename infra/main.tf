@@ -68,7 +68,33 @@ resource "azurerm_static_web_app" "web" {
 
   app_settings = {
     "COSMOS_DB_CONNECTION_STRING" = azurerm_cosmosdb_account.db.primary_sql_connection_string
+    "ACS_CONNECTION_STRING"       = azurerm_communication_service.acs.primary_connection_string
+    "SENDER_ADDRESS"              = "DoNotReply@${azurerm_email_communication_service_domain.managed.from_sender_domain_name}"
+    "NOTIFICATION_EMAIL"          = var.notification_email
   }
 
   tags = var.tags
+}
+
+resource "azurerm_communication_service" "acs" {
+  name                = "acs-${var.project_name}-${var.environment}"
+  resource_group_name = azurerm_resource_group.rg.name
+  data_location       = "United States"
+}
+
+resource "azurerm_email_communication_service" "email" {
+  name                = "email-${var.project_name}-${var.environment}"
+  resource_group_name = azurerm_resource_group.rg.name
+  data_location       = "United States"
+}
+
+resource "azurerm_email_communication_service_domain" "managed" {
+  name             = "AzureManagedDomain"
+  email_service_id = azurerm_email_communication_service.email.id
+  domain_management = "AzureManaged"
+}
+
+resource "azurerm_communication_service_email_domain_association" "assoc" {
+  communication_service_id = azurerm_communication_service.acs.id
+  email_service_domain_id  = azurerm_email_communication_service_domain.managed.id
 }
