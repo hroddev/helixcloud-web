@@ -68,9 +68,13 @@ resource "azurerm_static_web_app" "web" {
 
   app_settings = {
     "COSMOS_DB_CONNECTION_STRING" = azurerm_cosmosdb_account.db.primary_sql_connection_string
+    "COSMOS_DB_NAME"              = azurerm_cosmosdb_sql_database.main.name
+    "COSMOS_DB_CONTAINER"         = azurerm_cosmosdb_sql_container.contacts.name
     "ACS_CONNECTION_STRING"       = azurerm_communication_service.acs.primary_connection_string
     "SENDER_ADDRESS"              = "DoNotReply@${azurerm_email_communication_service_domain.managed.from_sender_domain}"
     "NOTIFICATION_EMAIL"          = var.notification_email
+    "PUBLIC_RECAPTCHA_SITE_KEY"   = var.recaptcha_site_key
+    "RECAPTCHA_SECRET"            = var.recaptcha_secret
   }
 
   tags = var.tags

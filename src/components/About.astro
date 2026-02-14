@@ -1,5 +1,5 @@
 ---
-
+import { siteData } from "../siteData";
 ---
 
 <section id="about" class="py-24 relative overflow-hidden bg-[#050505]">
@@ -23,7 +23,7 @@
                             <div
                                 class="text-6xl sm:text-8xl font-bold text-gradient leading-none mb-2"
                             >
-                                15+
+                                {siteData.yearsOfExperience}
                             </div>
                             <div
                                 class="text-gray-400 uppercase tracking-widest text-[10px] sm:text-xs font-bold mb-6"
@@ -33,16 +33,15 @@
                             <div
                                 class="flex flex-wrap justify-center gap-2 sm:gap-4"
                             >
-                                <div
-                                    class="px-3 py-1.5 sm:px-4 sm:py-2 bg-white/5 rounded-full text-[10px] sm:text-xs text-blue-400 border border-blue-500/20 shadow-sm"
-                                >
-                                    Cloud Expert
-                                </div>
-                                <div
-                                    class="px-3 py-1.5 sm:px-4 sm:py-2 bg-white/5 rounded-full text-[10px] sm:text-xs text-purple-400 border border-purple-500/20 shadow-sm"
-                                >
-                                    DevOps Leader
-                                </div>
+                                {
+                                    siteData.aboutBadges.map((badge, index) => (
+                                        <div
+                                            class={`px-3 py-1.5 sm:px-4 sm:py-2 bg-white/5 rounded-full text-[10px] sm:text-xs border shadow-sm ${index % 2 === 0 ? "text-blue-400 border-blue-500/20" : "text-purple-400 border-purple-500/20"}`}
+                                        >
+                                            {badge}
+                                        </div>
+                                    ))
+                                }
                             </div>
                         </div>
                         <!-- Ambient Grid Background -->
@@ -57,57 +56,36 @@
 
             <div class="lg:w-1/2">
                 <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
-                    Engineering <span class="text-blue-500">Excellence</span>
+                    {siteData.aboutTitle.split(" ")[0]}
+                    <span class="text-blue-500"
+                        >{
+                            siteData.aboutTitle.split(" ").slice(1).join(" ")
+                        }</span
+                    >
                 </h2>
                 <div class="space-y-6 text-gray-400 leading-relaxed text-lg">
-                    <p>
-                        With over <span
-                            class="text-white font-bold border-b-2 border-blue-500/30 pb-0.5"
-                            >15 years</span
-                        > in the IT trenches, I've evolved from systems administration
-                        to architecting complex, cloud-native ecosystems for global
-                        enterprises.
-                    </p>
-                    <p>
-                        My journey has been defined by a passion for <span
-                            class="text-white font-semibold"
-                            >Infrastructure as Code (IaC)</span
-                        > and automation. I specialize in bridging the gap between
-                        legacy infrastructure and modern, scalable cloud solutions
-                        on <span
-                            class="text-blue-400 font-semibold tracking-wide"
-                            >Microsoft Azure</span
-                        > and <span
-                            class="text-blue-400 font-semibold tracking-wide"
-                            >AWS</span
-                        >.
-                    </p>
-                    <p>
-                        From leading <span class="text-white"
-                            >global SD-WAN deployments</span
-                        > across 6 countries to reducing operational costs by <span
-                            class="text-green-400 font-bold">30%</span
-                        > through cloud optimization, I focus on delivering tangible
-                        business value through engineering precision and proactive
-                        monitoring.
-                    </p>
+                    {
+                        siteData.aboutParagraphs.map((paragraph) => (
+                            <p set:html={paragraph} />
+                        ))
+                    }
                 </div>
 
                 <div class="mt-10 grid grid-cols-2 gap-6">
                     <div>
                         <div class="text-white font-bold text-xl mb-1 italic">
-                            Bachelor's Degree
+                            {siteData.aboutDegree}
                         </div>
                         <div class="text-sm text-gray-500">
-                            Computer Systems
+                            {siteData.aboutDegreeMajor}
                         </div>
                     </div>
                     <div>
                         <div class="text-white font-bold text-xl mb-1 italic">
-                            Certified Professional
+                            {siteData.aboutCertifications}
                         </div>
                         <div class="text-sm text-gray-500">
-                            AWS & IBM Specialized
+                            {siteData.aboutCertificationsDetail}
                         </div>
                     </div>
                 </div>

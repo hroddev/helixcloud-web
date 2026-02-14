@@ -31,3 +31,16 @@ variable "notification_email" {
   description = "Correo electrónico donde se recibirán las notificaciones del formulario."
   type        = string
 }
+
+variable "recaptcha_site_key" {
+  description = "Google reCAPTCHA v3 site key."
+  type        = string
+  default     = ""
+}
+
+variable "recaptcha_secret" {
+  description = "Google reCAPTCHA v3 secret key."
+  type        = string
+  sensitive   = true
+  default     = ""
+}

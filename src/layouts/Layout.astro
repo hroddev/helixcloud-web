@@ -1,4 +1,5 @@
 ---
+import { siteData } from "../siteData";
 import "../styles/global.css";
 
 interface Props {
@@ -6,10 +7,7 @@ interface Props {
 	description?: string;
 }
 
-const {
-	title,
-	description = "Helix Cloud - Azure DevOps & Cloud Infrastructure Services",
-} = Astro.props;
+const { title, description = siteData.siteDescription } = Astro.props;
 ---
 
 <!doctype html>

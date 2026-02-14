@@ -1,5 +1,5 @@
 ---
-
+import { siteData } from "../siteData";
 ---
 
 <section
@@ -42,16 +42,15 @@
         <h1
             class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight"
         >
-            Architecting the Future <br />
-            <span class="text-gradient">on Microsoft Azure</span>
+            {siteData.heroTitle}
+            <br />
+            <span class="text-gradient">{siteData.heroSubtitle}</span>
         </h1>
 
         <p
             class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-            Senior DevOps Engineer specializing in scalable Cloud
-            Infrastructure, Infrastructure as Code, and production-grade
-            Optimization.
+            {siteData.heroTagline}
         </p>
 
         <div

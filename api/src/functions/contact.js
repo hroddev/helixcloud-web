@@ -1,8 +1,8 @@
 const { app, output } = require('@azure/functions');
 
 const cosmosOutput = output.cosmosDB({
-    databaseName: 'HelixDB',
-    containerName: 'Contacts',
+    databaseName: process.env.COSMOS_DB_NAME || 'HelixDB',
+    containerName: process.env.COSMOS_DB_CONTAINER || 'Contacts',
     createIfNotExists: true,
     connection: 'COSMOS_DB_CONNECTION_STRING',
 });

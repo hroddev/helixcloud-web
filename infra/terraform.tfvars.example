@@ -19,6 +19,10 @@ tags = {
 # The email address where you want to receive contact form notifications.
 notification_email = "your-email@example.com"
 
+# Google reCAPTCHA v3 keys
+recaptcha_site_key = "6Le98mosAAAAAOVNxCbe2-L1zWCs3_k7WTe7AzxI"
+recaptcha_secret   = "your_secret_here"
+
 # --- Azure Authentication (Optional if using Azure CLI) ---
 # If you are not using 'az login', you might need these in your environment 
 # rather than in this file. Recommended: Use Environment Variables for these.

@@ -40,12 +40,18 @@ The project follows a decoupled modern infrastructure approach:
    npm install
    ```
 
-2. **Run in development mode**:
+2. **Setup environment variables**:
+   ```bash
+   cp .env.example .env
+   # Edit .env with your local settings (e.g., reCAPTCHA site key)
+   ```
+
+3. **Run in development mode**:
    ```bash
    npm run dev
    ```
 
-3. **Deploy Infrastructure**:
+4. **Deploy Infrastructure**:
    ```bash
    cd infra
    cp terraform.tfvars.example terraform.tfvars
@@ -53,6 +59,14 @@ The project follows a decoupled modern infrastructure approach:
    terraform init
    terraform apply
    ```
+
+## 🎨 Customization
+
+To personalize the site with your own information, you only need to modify **one file**:
+
+- **[`src/siteData.ts`](file:///var/home/hrod-ws/workspace/helixcloud/helixcloud-web/src/siteData.ts)**: Change your name, role, social links, and section titles here.
+
+For infra-level configurations (like reCAPTCHA keys or database names), use the `.env` and `terraform.tfvars` files as described above.
 
 ## 🛡️ Implemented Security
 
