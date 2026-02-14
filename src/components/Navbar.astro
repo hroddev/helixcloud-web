@@ -14,7 +14,7 @@ const links = [
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-4 md:px-12"
   >
-    <a href="#top" class="flex items-center">
+    <a href="/" class="flex items-center">
       <!-- Logo Placeholder using SVG from user -->
       <img
         src="/helix-cloud-logo.webp"
@@ -83,10 +83,50 @@ const links = [
   // Mobile menu toggle
   const btn = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
   const menu = document.getElementById("navbar-sticky");
+  const links = menu?.querySelectorAll("a");
+
+  function closeMenu() {
+    if (menu && !menu.classList.contains("hidden")) {
+      menu.classList.add("hidden");
+    }
+  }
 
   if (btn && menu) {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
       menu.classList.toggle("hidden");
+    });
+
+    // Close on click outside
+    document.addEventListener("click", (e) => {
+      const target = e.target as Node;
+      if (
+        !menu.classList.contains("hidden") &&
+        !menu.contains(target) &&
+        !btn.contains(target)
+      ) {
+        closeMenu();
+      }
+    });
+
+    // Close on scroll
+    let lastScrollY = window.scrollY;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (Math.abs(window.scrollY - lastScrollY) > 10) {
+          closeMenu();
+        }
+        lastScrollY = window.scrollY;
+      },
+      { passive: true },
+    );
+
+    // Close when a link is clicked
+    links?.forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
     });
   }
 </script>
