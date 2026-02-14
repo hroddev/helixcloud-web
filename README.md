@@ -1,63 +1,63 @@
 # Helix Cloud - Senior DevOps & Infrastructure Portfolio
 
-Este repositorio contiene la plataforma web de **Helix Cloud**, una landing page profesional diseñada con arquitectura serverless y despliegue automatizado en Microsoft Azure.
+This repository contains the **Helix Cloud** web platform, a professional landing page designed with a serverless architecture and automated deployment on Microsoft Azure.
 
-## 🏗️ Arquitectura del Proyecto
+## 🏗️ Project Architecture
 
-El proyecto sigue un enfoque de infraestructura moderna desacoplada:
+The project follows a decoupled modern infrastructure approach:
 
-- **Frontend**: [Astro v4](https://astro.build/) (Zero-JS por defecto, alto rendimiento).
-- **Backend**: [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/) (Node.js) para el procesamiento de formularios.
-- **Base de Datos**: [Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/) (NoSQL) para el almacenamiento de contactos.
-- **Infraestructura**: [Terraform](https://www.terraform.io/) (IaC) para la gestión de recursos de Azure.
-- **Seguridad**: Integración con Google reCAPTCHA v3 y Cloudflare (WAF/SSL).
-- **Notificaciones**: Azure Communication Services para alertas por correo electrónico.
+- **Frontend**: [Astro v4](https://astro.build/) (Zero-JS by default, high performance).
+- **Backend**: [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/) (Node.js) for form processing.
+- **Database**: [Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/) (NoSQL) for contact storage.
+- **Infrastructure**: [Terraform](https://www.terraform.io/) (IaC) for Azure resource management.
+- **Security**: Integration with Google reCAPTCHA v3 and Cloudflare (WAF/SSL).
+- **Notifications**: Azure Communication Services for email alerts.
 
-## 📁 Estructura del Repositorio
+## 📁 Repository Structure
 
 ```text
 /
-├── api/                # Backend (Azure Functions en Node.js)
-├── infra/              # Infraestructura como Código (Terraform)
-├── public/             # Recursos estáticos (Imágenes, Favicon, etc.)
-├── src/                # Código fuente del Frontend (Astro)
-│   ├── components/     # Componentes modulares de la UI
-│   ├── layouts/        # Plantillas de diseño base
-│   └── pages/          # Rutas de la aplicación (index.astro)
-└── package.json        # Dependencias del proyecto
+├── api/                # Backend (Azure Functions in Node.js)
+├── infra/              # Infrastructure as Code (Terraform)
+├── public/             # Static assets (Images, Favicon, etc.)
+├── src/                # Frontend source code (Astro)
+│   ├── components/     # UI modular components
+│   ├── layouts/        # Base design layouts
+│   └── pages/          # Application routes (index.astro)
+└── package.json        # Project dependencies
 ```
 
-## 🛠️ Tecnologías Clave
+## 🛠️ Key Technologies
 
-- **Astro & TailwindCSS**: Para una UI fluida, responsiva y oscura (Aesthetic).
-- **GitHub Actions**: Pipeline de CI/CD para despliegue automático en Azure Static Web Apps.
-- **Azure Communication Services**: Sistema profesional de envío de correos.
+- **Astro & TailwindCSS**: For a fluid, responsive, and dark UI (Aesthetic).
+- **GitHub Actions**: CI/CD pipeline for automatic deployment to Azure Static Web Apps.
+- **Azure Communication Services**: Professional email delivery system.
 
-## 🚀 Despliegue Local
+## 🚀 Local Deployment
 
-1. **Instalar dependencias**:
+1. **Install dependencies**:
    ```bash
    npm install
    ```
 
-2. **Ejecutar en modo desarrollo**:
+2. **Run in development mode**:
    ```bash
    npm run dev
    ```
 
-3. **Desplegar Infraestructura**:
+3. **Deploy Infrastructure**:
    ```bash
    cd infra
    terraform init
    terraform apply
    ```
 
-## �️ Seguridad Implementada
+## 🛡️ Implemented Security
 
-- **reCAPTCHA v3**: Protección invisible contra bots en el formulario de contacto.
-- **Honeypot Field**: Capa extra de validación contra SPAM automatizado.
-- **Cosmos DB Firewall**: Acceso restringido solo a servicios de Azure e IPs autorizadas.
-- **HTTPS/Full Encryption**: Gestionado a través de Cloudflare.
+- **reCAPTCHA v3**: Invisible protection against bots in the contact form.
+- **Honeypot Field**: Extra validation layer against automated SPAM.
+- **Cosmos DB Firewall**: Restricted access only to Azure services and authorized IPs.
+- **HTTPS/Full Encryption**: Managed via Cloudflare.
 
 ---
-**Desarrollado por Héctor Rodríguez | 2026**
+**Developed by Héctor Rodríguez | 2026**
