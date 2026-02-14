@@ -42,8 +42,8 @@ The project follows a decoupled modern infrastructure approach:
 
 2. **Setup environment variables**:
    ```bash
-   cp .env.example .env
-   # Edit .env with your local settings (e.g., reCAPTCHA site key)
+   task config
+   # Edit .env and infra/terraform.tfvars with your actual data
    ```
 
 3. **Run in development mode**:
@@ -53,12 +53,32 @@ The project follows a decoupled modern infrastructure approach:
 
 4. **Deploy Infrastructure**:
    ```bash
-   cd infra
-   cp terraform.tfvars.example terraform.tfvars
-   # Edit terraform.tfvars with your configuration
-   terraform init
-   terraform apply
+   task infra:init
+   task infra:apply
    ```
+
+## 🛠️ Task Runner (go-task)
+
+This project uses [Task](https://taskfile.dev/) as a task runner to simplify common operations.
+
+### Installation
+
+- **Linux (Debian/Ubuntu)**: `sudo snap install task --classic` or `brew install go-task`
+- **macOS**: `brew install go-task`
+- **Windows**: `choco install go-task` or `scoop install task`
+
+### Available Commands
+
+| Command | Description |
+| :--- | :--- |
+| `task config` | **(First Step)** Creates `.env` and `terraform.tfvars` from templates. |
+| `task setup` | Installs all dependencies for the Frontend and the API. |
+| `task dev` | Runs the Astro development server. |
+| `task build` | Builds the project for production. |
+| `task infra:init` | Initializes Terraform. |
+| `task infra:plan` | Shows the execution plan for Azure infrastructure. |
+| `task infra:apply` | Deploys the infrastructure to Azure. |
+| `task clean` | Removes build artifacts and `node_modules`. |
 
 ## 🎨 Customization
 

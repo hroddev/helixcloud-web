@@ -2,17 +2,23 @@ version: "3"
 
 tasks:
   setup:
-    desc: Install dependencies
+    desc: Install all dependencies (Frontend & API)
     cmds:
       - npm install
+      - cd api && npm install
 
-  init-tailwind:
-    desc: Add Tailwind CSS integration
+  config:
+    desc: Setup environment variables from templates
     cmds:
-      - npx astro add tailwind --yes
+      - test -f .env || cp .env.example .env
+      - test -f infra/terraform.tfvars || cp infra/terraform.tfvars.example infra/terraform.tfvars
+      - echo "Configuration files created. Please edit .env and infra/terraform.tfvars with your actual data."
+    status:
+      - test -f .env
+      - test -f infra/terraform.tfvars
 
   dev:
-    desc: Run development server
+    desc: Run development server (Astro)
     cmds:
       - npm run dev
 
@@ -20,3 +26,28 @@ tasks:
     desc: Build for production
     cmds:
       - npm run build
+
+  infra:init:
+    desc: Initialize Terraform
+    dir: infra
+    cmds:
+      - terraform init
+
+  infra:plan:
+    desc: Show infrastructure changes
+    dir: infra
+    cmds:
+      - terraform plan
+
+  infra:apply:
+    desc: Deploy infrastructure
+    dir: infra
+    cmds:
+      - terraform apply -auto-approve
+
+  clean:
+    desc: Remove build artifacts and node_modules
+    cmds:
+      - rm -rf dist
+      - rm -rf node_modules
+      - rm -rf api/node_modules
