@@ -30,5 +30,4 @@ variable "tags" {
 variable "notification_email" {
   description = "Correo electrónico donde se recibirán las notificaciones del formulario."
   type        = string
-  default     = "hrodriguez13@gmail.com"
 }
