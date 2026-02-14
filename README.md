@@ -1,43 +1,63 @@
-# Astro Starter Kit: Minimal
+# Helix Cloud - Senior DevOps & Infrastructure Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Este repositorio contiene la plataforma web de **Helix Cloud**, una landing page profesional diseñada con arquitectura serverless y despliegue automatizado en Microsoft Azure.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🏗️ Arquitectura del Proyecto
 
-## 🚀 Project Structure
+El proyecto sigue un enfoque de infraestructura moderna desacoplada:
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Frontend**: [Astro v4](https://astro.build/) (Zero-JS por defecto, alto rendimiento).
+- **Backend**: [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/) (Node.js) para el procesamiento de formularios.
+- **Base de Datos**: [Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/) (NoSQL) para el almacenamiento de contactos.
+- **Infraestructura**: [Terraform](https://www.terraform.io/) (IaC) para la gestión de recursos de Azure.
+- **Seguridad**: Integración con Google reCAPTCHA v3 y Cloudflare (WAF/SSL).
+- **Notificaciones**: Azure Communication Services para alertas por correo electrónico.
+
+## 📁 Estructura del Repositorio
 
 ```text
 /
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+├── api/                # Backend (Azure Functions en Node.js)
+├── infra/              # Infraestructura como Código (Terraform)
+├── public/             # Recursos estáticos (Imágenes, Favicon, etc.)
+├── src/                # Código fuente del Frontend (Astro)
+│   ├── components/     # Componentes modulares de la UI
+│   ├── layouts/        # Plantillas de diseño base
+│   └── pages/          # Rutas de la aplicación (index.astro)
+└── package.json        # Dependencias del proyecto
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Tecnologías Clave
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **Astro & TailwindCSS**: Para una UI fluida, responsiva y oscura (Aesthetic).
+- **GitHub Actions**: Pipeline de CI/CD para despliegue automático en Azure Static Web Apps.
+- **Azure Communication Services**: Sistema profesional de envío de correos.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🚀 Despliegue Local
 
-## 🧞 Commands
+1. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
 
-All commands are run from the root of the project, from a terminal:
+2. **Ejecutar en modo desarrollo**:
+   ```bash
+   npm run dev
+   ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+3. **Desplegar Infraestructura**:
+   ```bash
+   cd infra
+   terraform init
+   terraform apply
+   ```
 
-## 👀 Want to learn more?
+## �️ Seguridad Implementada
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **reCAPTCHA v3**: Protección invisible contra bots en el formulario de contacto.
+- **Honeypot Field**: Capa extra de validación contra SPAM automatizado.
+- **Cosmos DB Firewall**: Acceso restringido solo a servicios de Azure e IPs autorizadas.
+- **HTTPS/Full Encryption**: Gestionado a través de Cloudflare.
+
+---
+**Desarrollado por Héctor Rodríguez | 2026**
