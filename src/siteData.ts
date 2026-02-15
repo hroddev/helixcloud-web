@@ -47,7 +47,7 @@ export const siteData = {
             tools: ["Grafana", "Prometheus", "Zabbix", "PRTG", "Dynatrace"],
         },
     ],
-    stackFeaturedTech: ["AZURE", "AWS", "TERRAFORM", "KUBERNETES", "VMWARE", "ANSIBLE"],
+    stackFeaturedTech: ["AZURE", "AWS", "TERRAFORM", "KUBERNETES", "VMWARE"],
 
     // --- Social Links ---
     linkedinUrl: "https://linkedin.com/in/hroddev",
