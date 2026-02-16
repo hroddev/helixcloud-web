@@ -71,6 +71,12 @@ The project follows a decoupled modern infrastructure approach:
    task infra:apply
    ```
 
+5.  **Run with Containers (Optional)**:
+    ```bash
+    task container:build
+    task container:run
+    ```
+
 ## 🛠️ Task Runner (go-task)
 
 This project uses [Task](https://taskfile.dev/) as a task runner to simplify common operations.
@@ -92,6 +98,8 @@ This project uses [Task](https://taskfile.dev/) as a task runner to simplify com
 | `task infra:init` | Initializes Terraform. |
 | `task infra:plan` | Shows the execution plan for Azure infrastructure. |
 | `task infra:apply` | Deploys the infrastructure to Azure. |
+| `task container:build` | Builds a Docker/Podman image for Nginx serving Astro. |
+| `task container:run` | Runs the container locally on port 8080. |
 | `task clean` | Removes build artifacts and `node_modules`. |
 
 ## 🎨 Customization

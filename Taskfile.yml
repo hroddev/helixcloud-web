@@ -45,6 +45,22 @@ tasks:
     cmds:
       - terraform apply -auto-approve
 
+  container:build:
+    desc: Build the site container image (Podman/Docker)
+    cmds:
+      - podman build -t helixcloud-web .
+
+  container:run:
+    desc: Run the site in a container
+    cmds:
+      - echo "Site will be available at http://localhost:8080"
+      - podman run -d -p 8080:80 --name helixcloud-web helixcloud-web
+
+  container:stop:
+    desc: Stop and remove the site container
+    cmds:
+      - podman stop helixcloud-web && podman rm helixcloud-web
+
   clean:
     desc: Remove build artifacts and node_modules
     cmds:
