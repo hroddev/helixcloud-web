@@ -1,0 +1,99 @@
+---
+import { siteData } from "../siteData";
+---
+
+<section id="pricing" class="py-24 bg-[#050505] relative overflow-hidden">
+    <!-- Decorator -->
+    <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[100px] -z-10"
+    >
+    </div>
+
+    <div class="container mx-auto px-6 md:px-12">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">
+                Planes <span class="text-gradient">Transparentes</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Sin sorpresas. Sin contratos largos. Elige el plan que mejor se adapte a tu empresa.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {siteData.pricingPlans.map((plan) => (
+                <div
+                    class={`relative rounded-2xl border transition-all duration-300 ${
+                        plan.featured
+                            ? "md:scale-105 bg-gradient-to-br from-blue-600/20 to-indigo-600/20 border-blue-500/50 shadow-2xl shadow-blue-900/20"
+                            : "bg-black border-white/10 hover:border-blue-500/30"
+                    }`}
+                >
+                    {plan.featured && (
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-semibold px-4 py-1 rounded-full">
+                                {plan.badge}
+                            </span>
+                        </div>
+                    )}
+
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">
+                            {plan.name}
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-6">
+                            {plan.description}
+                        </p>
+
+                        <div class="mb-8">
+                            <span class="text-4xl font-bold text-white">
+                                {plan.price}
+                            </span>
+                            {plan.period && (
+                                <span class="text-gray-400 ml-2">{plan.period}</span>
+                            )}
+                        </div>
+
+                        <a
+                            href={plan.ctaLink}
+                            class={`w-full py-3 px-6 rounded-lg font-semibold transition-all mb-8 text-center block ${
+                                plan.featured
+                                    ? "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-900/30 hover:scale-105"
+                                    : "glass text-white hover:bg-white/10 border border-white/10"
+                            }`}
+                        >
+                            {plan.cta}
+                        </a>
+
+                        <div class="space-y-3">
+                            {plan.features.map((feature) => (
+                                <div class="flex items-start gap-3">
+                                    <svg
+                                        class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                    <span class="text-gray-300 text-sm">
+                                        {feature}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <!-- Guarantee -->
+        <div class="mt-16 text-center max-w-2xl mx-auto">
+            <p class="text-gray-400 text-sm">
+                <span class="text-green-400 font-semibold">✓ Sin contratos de largo plazo</span> — Comienza cuando quieras, cancela sin penalidad.
+            </p>
+        </div>
+    </div>
+</section>
