@@ -8,7 +8,7 @@ export const siteData = {
     siteDescription: "Senior DevOps Engineer specializing in scalable Cloud Infrastructure, Infrastructure as Code, and production-grade Optimization on Microsoft Azure.",
 
     // --- Hero Section ---
-    heroTitle: "La infraestructura que tu empresa necesita",
+    heroTitle: "La infra que necesitas",
     heroSubtitle: "Cloud, Microsoft 365 y DevOps para Panamá",
     heroTagline: "",
 
