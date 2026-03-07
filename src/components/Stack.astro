@@ -16,21 +16,16 @@ import { siteData } from "../siteData";
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {
-                siteData.stackCategories.map((category) => (
+                siteData.stackBenefits.map((benefit) => (
                     <div class="p-8 rounded-2xl bg-[#050505] border border-white/5 hover:border-blue-500/20 transition-all group">
-                        <h3 class="text-lg font-bold mb-6 text-white border-b border-white/10 pb-4">
-                            {category.name}
+                        <h3 class="text-lg font-bold mb-4 text-white text-gradient">
+                            {benefit.name}
                         </h3>
-                        <ul class="space-y-4">
-                            {category.tools.map((tool) => (
-                                <li class="flex items-center gap-3 text-gray-400 group-hover:text-gray-300">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                                    {tool}
-                                </li>
-                            ))}
-                        </ul>
+                        <p class="text-gray-300 leading-relaxed">
+                            {benefit.benefit}
+                        </p>
                     </div>
                 ))
             }
