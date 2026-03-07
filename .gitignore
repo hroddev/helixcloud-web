@@ -34,3 +34,4 @@ pnpm-debug.log*
 # Azure logs
 *.log
 azure-pipelines*.yaml.bak
+.claude/
