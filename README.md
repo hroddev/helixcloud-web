@@ -1,134 +1,81 @@
-# Helix Cloud - Senior DevOps & Infrastructure Portfolio
 
-This repository contains the **Helix Cloud** web platform, a professional landing page designed with a serverless architecture and automated deployment on Microsoft Azure.
+  # HelixCloud — Servicios de Infraestructura TI                              
+                                                                              
+  Landing page moderna para **HelixCloud**, especialista en infraestructura   
+  cloud, Microsoft 365 y DevOps orientado a empresas medianas en Panamá y     
+  Centroamérica.                                                              
+                                                                              
+  ## 🚀 Visita el sitio                                                       
+                                                                              
+  helixcloud.dev https://helixcloud.dev                                       
+                                                                              
+  ## 📋 Sobre HelixCloud                                                      
+                                                                              
+  HelixCloud es una firma de servicios de infraestructura TI administrada     
+  fundada en Panamá, especializada en:                                        
+                                                                              
+  • **Migración a la Nube** — Azure / AWS sin downtime                        
+  • **Microsoft 365 y Entra ID** — Implementación y administración            
+  • **DevOps y Automatización** — Pipelines CI/CD, IaC                        
+  • **Monitoreo y Observabilidad** — Visibilidad en tiempo real               
+  • **Seguridad Informática** — Zero Trust, hardening                         
+  • **Infraestructura Administrada** — Retainer mensual con SLA 99.9%         
+                                                                              
+  ### Especialista certificado                                                
+                                                                              
+  • **15+ años** de experiencia en infraestructura TI                         
+  • **6 países** con implementaciones exitosas                                
+  • **30%** reducción promedio en costos operativos                           
+                                                                              
+  **Ubicación:** Ciudad de Panamá, Panamá                                     
+  **Cobertura:** Panamá y región centroamericana/Caribe hispanohablante       
+                                                                              
+  ## 🛠️ Stack técnico                                                         
+                                                                              
+  • **Framework:** Astro https://astro.build                                  
+  • **Styling:** Tailwind CSS https://tailwindcss.com                         
+  • **Hosting:** Azure Static Web Apps https://azure.microsoft.com/en-        
+  us/products/app-service/static                                              
+  • **CI/CD:** GitHub Actions                                                 
+  • **Idioma:** 100% Español                                                  
+                                                                              
+  ## 🚀 Desarrollo local                                                      
+                                                                              
+  ### Requisitos                                                              
+                                                                              
+  • Node.js 18+                                                               
+  • npm o bun                                                                 
+                                                                              
+  ### Instalación y desarrollo                                                
+                                                                              
+    # Instalar dependencias                                                   
+    npm install                                                               
+                                                                              
+    # Iniciar servidor de desarrollo                                          
+    npm run dev                                                               
+                                                                              
+    # Build para producción                                                   
+    npm run build                                                             
+                                                                              
+  ## 📊 Despliegue automático                                                 
+                                                                              
+  El sitio se despliega automáticamente en Azure Static Web Apps cuando se    
+  realiza push a main.                                                        
+                                                                              
+  ## 📝 Contenido del sitio                                                   
+                                                                              
+  Todo el contenido está centralizado en src/siteData.ts.                     
+                                                                              
+  ## 🔐 Contacto                                                              
+                                                                              
+  • **Email:** hector@helixcloud.dev mailto:hector@helixcloud.dev             
+  • **LinkedIn:** linkedin.com/in/hroddev                                     
+  • **WhatsApp:** Contacto directo https://wa.                                
+  me/50766366261?text=Hola%2C%20vi%20su%20sitio%20HelixCloud.                 
+  dev%20y%20me%20interesa%20conocer%20sus%20servicios                         
+                                                                              
+  --------                                                                    
+                                                                              
+  **Construido con ❤️ en Panamá**                                             
+  Especializado en infraestructura confiable para empresas medianas           
 
-> [!TIP]
-> **Free Tier Friendly**: This entire stack is designed to run within the **Free Tiers** of Azure, Cloudflare, and Google reCAPTCHA. You can host this professional portfolio with **zero monthly costs**.
-
-## 🏗️ Project Architecture
-
-The project follows a decoupled modern infrastructure approach:
-
-- **Frontend**: [Astro v4](https://astro.build/) (Zero-JS by default, high performance).
-- **Backend**: [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/) (Node.js) for form processing.
-- **Database**: [Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/) (NoSQL) for contact storage.
-- **Infrastructure**: [Terraform](https://www.terraform.io/) (IaC) for Azure resource management.
-- **Security**: Integration with Google reCAPTCHA v3 and Cloudflare (WAF/SSL).
-- **Notifications**: Azure Communication Services for email alerts.
-
-## 📁 Repository Structure
-
-```text
-/
-├── api/                # Backend (Azure Functions in Node.js)
-├── infra/              # Infrastructure as Code (Terraform)
-├── public/             # Static assets (Images, Favicon, etc.)
-├── src/                # Frontend source code (Astro)
-│   ├── components/     # UI modular components
-│   ├── layouts/        # Base design layouts
-│   └── pages/          # Application routes (index.astro)
-└── package.json        # Project dependencies
-```
-
-## 🛠️ Key Technologies
-
-- **Astro & TailwindCSS**: For a fluid, responsive, and dark UI (Aesthetic).
-- **GitHub Actions**: CI/CD pipeline for automatic deployment to Azure Static Web Apps.
-- **Azure Communication Services**: Professional email delivery system.
-
-### � Documentation Links
-
-| Technology | Documentation |
-| :--- | :--- |
-| **Astro** | [docs.astro.build](https://docs.astro.build/) |
-| **Azure Functions** | [learn.microsoft.com/azure/azure-functions](https://learn.microsoft.com/en-us/azure/azure-functions/) |
-| **Cosmos DB** | [learn.microsoft.com/azure/cosmos-db](https://learn.microsoft.com/en-us/azure/cosmos-db/) |
-| **Terraform** | [developer.hashicorp.com/terraform/docs](https://developer.hashicorp.com/terraform/docs) |
-| **Azure Static Web Apps** | [learn.microsoft.com/azure/static-web-apps](https://learn.microsoft.com/en-us/azure/static-web-apps/) |
-| **reCAPTCHA v3** | [developers.google.com/recaptcha](https://developers.google.com/recaptcha/docs/v3) |
-
-## �🚀 Local Deployment
-
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-2. **Setup environment variables**:
-   ```bash
-   task config
-   # Edit .env and infra/terraform.tfvars with your actual data
-   ```
-
-3. **Run in development mode**:
-   ```bash
-   npm run dev
-   ```
-
-4. **Deploy Infrastructure**:
-   ```bash
-   task infra:init
-   task infra:apply
-   ```
-
-5.  **Run with Containers (Optional)**:
-    ```bash
-    task container:build
-    task container:run
-    ```
-
-## 🛠️ Task Runner (go-task)
-
-This project uses [Task](https://taskfile.dev/) as a task runner to simplify common operations.
-
-### Installation
-
-- **Linux (Debian/Ubuntu)**: `sudo snap install task --classic` or `brew install go-task`
-- **macOS**: `brew install go-task`
-- **Windows**: `choco install go-task` or `scoop install task`
-
-### Available Commands
-
-| Command | Description |
-| :--- | :--- |
-| `task config` | **(First Step)** Creates `.env` and `terraform.tfvars` from templates. |
-| `task setup` | Installs all dependencies for the Frontend and the API. |
-| `task dev` | Runs the Astro development server. |
-| `task build` | Builds the project for production. |
-| `task infra:init` | Initializes Terraform. |
-| `task infra:plan` | Shows the execution plan for Azure infrastructure. |
-| `task infra:apply` | Deploys the infrastructure to Azure. |
-| `task container:build` | Builds a Docker/Podman image for Nginx serving Astro. |
-| `task container:run` | Runs the container locally on port 8080. |
-| `task clean` | Removes build artifacts and `node_modules`. |
-
-## 🎨 Customization
-
-To personalize the site with your own information, you only need to modify **one file**:
-
-- **[`src/siteData.ts`](file:///var/home/hrod-ws/workspace/helixcloud/helixcloud-web/src/siteData.ts)**: Change your name, role, social links, and section titles here.
-
-For infra-level configurations (like reCAPTCHA keys or database names), use the `.env` and `terraform.tfvars` files as described above.
-
-## 🛡️ Implemented Security
-
-- **reCAPTCHA v3**: Invisible protection against bots in the contact form.
-- **Honeypot Field**: Extra validation layer against automated SPAM.
-- **Cosmos DB Firewall**: Restricted access only to Azure services and authorized IPs.
-- **HTTPS/Full Encryption**: Managed via Cloudflare.
-
-## 🌍 Open Source & Community
-
-This project is **Open Source**! I believe in sharing knowledge and providing tools that help other engineers showcase their work professionally and efficiently. 
-
-- **Contributions**: Feel free to open issues or pull requests to improve the template.
-- **Showcase**: If you use this template, I'd love to see it! 
-
-### ☁️ Don't have an Azure Account?
-
-You can start for free! Azure offers a **Free Account** that includes 12 months of popular free services, $200 credit, and 55+ other services that are free always.
-
-👉 **[Create your Azure Free Account here](https://azure.microsoft.com/free/)**
-
----
-**Developed with ❤️ for the DevOps Community | 2026**
