@@ -67,6 +67,13 @@ tasks:
     cmds:
       - podman stop helixcloud-web && podman rm helixcloud-web
 
+  container:rebuild:
+    desc: Rebuild the frontend image and restart the container
+    cmds:
+      - podman rm -f helixcloud-web 2>/dev/null || true
+      - podman build -t helixcloud-web .
+      - podman run -d -p 8080:80 --name helixcloud-web helixcloud-web
+
   clean:
     desc: Remove build artifacts and node_modules
     cmds:
