@@ -22,6 +22,12 @@ tasks:
     cmds:
       - npm run dev
 
+  api:dev:
+    desc: Run the Azure Functions API locally (requires Azure Functions Core Tools)
+    dir: api
+    cmds:
+      - npm start
+
   build:
     desc: Build for production
     cmds:

@@ -90,6 +90,40 @@ export const siteData = {
         },
     ],
 
+    // --- Starter Services (One-Off / Tripwire) ---
+    starterServices: [
+        {
+            serviceKey: "audit",
+            title: "Auditoría de Seguridad y Costos Cloud",
+            price: "$300",
+            period: "Pago único",
+            description: "Revisión completa de tu entorno Azure o AWS para detectar fugas de costos y vulnerabilidades de seguridad.",
+            includes: [
+                "Análisis de rightsizing de recursos",
+                "Evaluación de vulnerabilidades de seguridad",
+                "Reporte de optimización de costos",
+            ],
+            cta: "Solicitar auditoría →",
+            ctaLink: "#contact",
+            icon: "🔍",
+        },
+        {
+            serviceKey: "migration",
+            title: "Migración Express a Microsoft 365 & Entra ID",
+            price: "$450",
+            period: "Pago único",
+            description: "Lleva tu correo e identidades a Microsoft 365 con políticas de seguridad base desde el primer día.",
+            includes: [
+                "Migración de buzones de correo",
+                "Configuración de dominio",
+                "Políticas de seguridad base",
+            ],
+            cta: "Solicitar migración →",
+            ctaLink: "#contact",
+            icon: "🚀",
+        },
+    ],
+
     // --- Pricing Section ---
     pricingPlans: [
         {
