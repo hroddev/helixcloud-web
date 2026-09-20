@@ -22,6 +22,12 @@ tasks:
     cmds:
       - npm run dev
 
+  api:dev:
+    desc: Run the Azure Functions API locally (requires Azure Functions Core Tools)
+    dir: api
+    cmds:
+      - npm start
+
   build:
     desc: Build for production
     cmds:
@@ -53,13 +59,20 @@ tasks:
   container:run:
     desc: Run the site in a container
     cmds:
-      - echo "Site will be available at http://localhost:8080"
+      - echo "Site will be available at http://127.0.0.1:8080"
       - podman run -d -p 8080:80 --name helixcloud-web helixcloud-web
 
   container:stop:
     desc: Stop and remove the site container
     cmds:
       - podman stop helixcloud-web && podman rm helixcloud-web
+
+  container:rebuild:
+    desc: Rebuild the frontend image and restart the container
+    cmds:
+      - podman rm -f helixcloud-web 2>/dev/null || true
+      - podman build -t helixcloud-web .
+      - podman run -d -p 8080:80 --name helixcloud-web helixcloud-web
 
   clean:
     desc: Remove build artifacts and node_modules

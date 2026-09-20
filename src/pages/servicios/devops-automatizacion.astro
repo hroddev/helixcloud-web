@@ -1,0 +1,10 @@
+---
+import ServicePage from "../../components/ServicePage.astro";
+import { siteData } from "../../siteData";
+
+const service = siteData.servicePages.find(
+	(s) => s.slug === "devops-automatizacion",
+);
+---
+
+<ServicePage service={service} />

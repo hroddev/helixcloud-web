@@ -36,102 +36,196 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || "";
         </a>
 
         <div
-            class="glass p-8 md:p-12 rounded-3xl max-w-3xl mx-auto border border-white/10 shadow-2xl"
+            class="glass p-8 md:p-12 rounded-3xl max-w-3xl mx-auto border border-white/10 shadow-2xl text-left"
         >
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-white">
-                        O conéctate con nosotros
-                    </h3>
-                    <div class="space-y-4">
-                        <a
-                            href={siteData.linkedinUrl}
-                            target="_blank"
-                            class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
-                        >
-                            <svg
-                                class="w-5 h-5 text-blue-500"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                                ><path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                                ></path></svg
-                            >
-                            {siteData.linkedinHandle}
-                        </a>
-                    </div>
-                </div>
-
-                <form id="contact-form" class="space-y-4">
+            <form id="contact-form" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Nombre completo -->
                     <div>
                         <label
                             for="name"
                             class="block text-sm font-medium text-gray-400 mb-1"
-                            >Tu nombre</label
+                            >Nombre completo <span class="text-blue-400">*</span></label
                         >
                         <input
                             type="text"
                             id="name"
                             name="name"
-                            class="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-sans"
+                            autocomplete="name"
+                            class="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans"
                             placeholder="Juan García"
                             required
                         />
                     </div>
+
+                    <!-- Correo corporativo -->
                     <div>
                         <label
                             for="email"
                             class="block text-sm font-medium text-gray-400 mb-1"
-                            >Tu correo</label
+                            >Correo corporativo <span class="text-blue-400">*</span></label
                         >
                         <input
                             type="email"
                             id="email"
                             name="email"
-                            class="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-sans"
+                            autocomplete="email"
+                            class="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans"
                             placeholder="tu@empresa.com"
                             required
                         />
                     </div>
+
+                    <!-- Empresa -->
                     <div>
                         <label
-                            for="message"
+                            for="company"
                             class="block text-sm font-medium text-gray-400 mb-1"
-                            >¿Cuál es tu mayor dolor de cabeza con IT hoy?</label
+                            >Empresa / Organización <span class="text-blue-400">*</span></label
                         >
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="3"
-                            class="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all font-sans"
-                            placeholder="Cuéntanos sobre tu infraestructura..."
-                            required></textarea>
+                        <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            autocomplete="organization"
+                            class="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans"
+                            placeholder="Mi Empresa S.A."
+                            required
+                        />
                     </div>
-                    <button
-                        type="submit"
-                        id="submit-btn"
-                        class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium py-3 px-4 rounded-lg shadow-lg shadow-blue-900/20 transition-all hover:scale-[1.02]"
-                    >
-                        Solicitar diagnóstico gratuito
-                    </button>
-                    <p id="form-status" class="text-center text-sm mt-2 hidden">
-                    </p>
-                </form>
 
-                <!-- Expectations -->
-                <div class="space-y-3 text-left text-sm text-gray-300">
-                    <div class="flex items-start gap-3">
-                        <span class="text-green-400 font-bold mt-0.5">✓</span>
-                        <span>Te respondo en menos de 24 horas</span>
+                    <!-- Servicio de interés -->
+                    <div>
+                        <label
+                            for="service"
+                            class="block text-sm font-medium text-gray-400 mb-1"
+                            >Servicio de interés <span class="text-blue-400">*</span></label
+                        >
+                        <select
+                            id="service"
+                            name="service"
+                            class="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans"
+                            required
+                        >
+                            <option value="" disabled selected>
+                                Selecciona una opción
+                            </option>
+                            <option value="auditoria">
+                                Auditoría de Costos y Nube (Pago único)
+                            </option>
+                            <option value="migracion-m365">
+                                Migración a Microsoft 365 / Entra ID
+                            </option>
+                            <option value="infraestructura">
+                                Infraestructura Administrada (Plan Esencial /
+                                Profesional)
+                            </option>
+                            <option value="devops">
+                                DevOps & Automatización a medida
+                            </option>
+                        </select>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <span class="text-green-400 font-bold mt-0.5">✓</span>
-                        <span>Primera consulta sin costo</span>
+                </div>
+
+                <!-- Infraestructura actual -->
+                <fieldset>
+                    <legend
+                        class="block text-sm font-medium text-gray-400 mb-3"
+                    >
+                        Infraestructura actual
+                        <span class="text-gray-500 font-normal"
+                            >(selecciona todas las que apliquen)</span
+                        >
+                    </legend>
+                    <div class="flex flex-wrap gap-3">
+                        {
+                            ["Azure", "AWS", "On-Premises/VMware", "Otro"].map(
+                                (option) => (
+                                    <label
+                                        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-700 bg-white/5 text-sm text-gray-300 cursor-pointer transition-all hover:border-blue-500/50 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-500/10 has-[:checked]:text-white"
+                                    >
+                                        <input
+                                            type="checkbox"
+                                            name="infrastructure"
+                                            value={option}
+                                            class="w-4 h-4 rounded border-gray-600 bg-transparent text-blue-600 focus:ring-2 focus:ring-blue-500"
+                                        />
+                                        {option}
+                                    </label>
+                                ),
+                            )
+                        }
                     </div>
-                    <div class="flex items-start gap-3">
-                        <span class="text-green-400 font-bold mt-0.5">✓</span>
-                        <span>Sin contratos de largo plazo para empezar</span>
-                    </div>
+                </fieldset>
+
+                <!-- Mensaje / Desafío principal -->
+                <div>
+                    <label
+                        for="message"
+                        class="block text-sm font-medium text-gray-400 mb-1"
+                        >Mensaje / Desafío principal
+                        <span class="text-blue-400">*</span></label
+                    >
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        class="w-full bg-white/5 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans"
+                        placeholder="Cuéntanos sobre tu infraestructura o el reto que quieres resolver..."
+                        required></textarea>
+                </div>
+
+                <!-- Honeypot (anti-spam, oculto para humanos) -->
+                <div class="hidden" aria-hidden="true">
+                    <label for="bot_field">No llenar este campo</label>
+                    <input
+                        type="text"
+                        id="bot_field"
+                        name="bot_field"
+                        tabindex="-1"
+                        autocomplete="off"
+                    />
+                </div>
+
+                <button
+                    type="submit"
+                    id="submit-btn"
+                    class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium py-3 px-4 rounded-lg shadow-lg shadow-blue-900/20 transition-all hover:scale-[1.02]"
+                >
+                    Solicitar diagnóstico gratuito
+                </button>
+                <p id="form-status" class="text-center text-sm mt-2 hidden">
+                </p>
+            </form>
+
+            <!-- Connect + expectations -->
+            <div
+                class="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400"
+            >
+                <a
+                    href={siteData.linkedinUrl}
+                    target="_blank"
+                    class="inline-flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
+                >
+                    <svg
+                        class="w-5 h-5 text-blue-500"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        ><path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                        ></path></svg
+                    >
+                    {siteData.linkedinHandle}
+                </a>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <span
+                        ><span class="text-green-400 font-bold">✓</span> Te
+                        respondemos en menos de 24 horas</span
+                    >
+                    <span
+                        ><span class="text-green-400 font-bold">✓</span> Primera
+                        consulta sin costo</span
+                    >
                 </div>
             </div>
         </div>
@@ -144,12 +238,46 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || "";
     const submitBtn = document.getElementById(
         "submit-btn",
     ) as HTMLButtonElement;
+    const serviceSelect = document.getElementById(
+        "service",
+    ) as HTMLSelectElement;
+
+    // Mapeo entre data-service (CTAs de Pricing) y opciones del select
+    const serviceMap: Record<string, string> = {
+        audit: "auditoria",
+        migration: "migracion-m365",
+    };
+
+    function applyService(key: string) {
+        if (serviceSelect && serviceMap[key]) {
+            serviceSelect.value = serviceMap[key];
+        }
+    }
+
+    // Pre-llenar desde CTAs con data-service
+    document.querySelectorAll("[data-service]").forEach((el) => {
+        el.addEventListener("click", () => {
+            const key = el.getAttribute("data-service");
+            if (key) applyService(key);
+        });
+    });
+
+    // Pre-llenar desde parámetro en la URL (?service=audit)
+    const urlParam = new URLSearchParams(window.location.search).get(
+        "service",
+    );
+    if (urlParam) applyService(urlParam);
 
     if (form) {
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
+
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
+            const data: Record<string, unknown> = Object.fromEntries(
+                formData,
+            );
+            // Las casillas de infraestructura llegan como múltiples valores
+            data.infrastructure = formData.getAll("infrastructure");
 
             // Get reCAPTCHA token
             // @ts-ignore
