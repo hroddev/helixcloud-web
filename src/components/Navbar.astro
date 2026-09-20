@@ -9,7 +9,7 @@ const links = [
     href: isHome ? "#services" : "/#services",
     children: siteData.servicePages.map((s) => ({
       name: s.navLabel,
-      href: `/servicios/${s.slug}`,
+      href: `/servicios/${s.slug}/`,
     })),
   },
   { name: "Precios", href: isHome ? "#pricing" : "/#pricing" },

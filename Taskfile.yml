@@ -59,7 +59,7 @@ tasks:
   container:run:
     desc: Run the site in a container
     cmds:
-      - echo "Site will be available at http://localhost:8080"
+      - echo "Site will be available at http://127.0.0.1:8080"
       - podman run -d -p 8080:80 --name helixcloud-web helixcloud-web
 
   container:stop:

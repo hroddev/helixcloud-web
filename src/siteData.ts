@@ -61,19 +61,19 @@ export const siteData = {
     services: [
         {
             title: "Migración a la Nube",
-            href: "/servicios/migracion-azure",
+            href: "/servicios/migracion-azure/",
             description: "Mueve tu empresa a Azure o GCP sin downtime. Llevamos tu infraestructura actual a la nube con un plan estructurado. Tus operaciones continúan mientras modernizamos.",
             tags: ["Azure", "GCP", "Terraform", "Sin downtime"],
         },
         {
             title: "Microsoft 365 y Entra ID",
-            href: "/servicios/microsoft-365",
+            href: "/servicios/microsoft-365/",
             description: "Microsoft 365 configurado y administrado correctamente. Implementación completa, gestión de identidades con Entra ID y políticas de seguridad. Tu equipo colabora mejor, tus datos están protegidos.",
             tags: ["M365", "Entra ID", "Exchange", "SharePoint"],
         },
         {
             title: "DevOps y Automatización",
-            href: "/servicios/devops-automatizacion",
+            href: "/servicios/devops-automatizacion/",
             description: "Deployments que no fallan un viernes. Pipelines CI/CD, infraestructura como código y automatización de procesos. Todo versionado, todo reproducible, todo auditable.",
             tags: ["Terraform", "Ansible", "GitHub Actions", "Docker"],
         },
