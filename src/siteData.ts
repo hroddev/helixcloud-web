@@ -6,6 +6,7 @@ export const siteData = {
     // --- SEO & Global ---
     siteTitle: "Helix Cloud - Senior DevOps & Infrastructure Portfolio",
     siteDescription: "Senior DevOps Engineer specializing in scalable Cloud Infrastructure, Infrastructure as Code, and production-grade Optimization on Microsoft Azure.",
+    siteUrl: "https://helixcloud.dev",
 
     // --- Hero Section ---
     heroTitle: "La infra que necesitas",
@@ -60,16 +61,19 @@ export const siteData = {
     services: [
         {
             title: "Migración a la Nube",
+            href: "/servicios/migracion-azure",
             description: "Mueve tu empresa a Azure o GCP sin downtime. Llevamos tu infraestructura actual a la nube con un plan estructurado. Tus operaciones continúan mientras modernizamos.",
             tags: ["Azure", "GCP", "Terraform", "Sin downtime"],
         },
         {
             title: "Microsoft 365 y Entra ID",
+            href: "/servicios/microsoft-365",
             description: "Microsoft 365 configurado y administrado correctamente. Implementación completa, gestión de identidades con Entra ID y políticas de seguridad. Tu equipo colabora mejor, tus datos están protegidos.",
             tags: ["M365", "Entra ID", "Exchange", "SharePoint"],
         },
         {
             title: "DevOps y Automatización",
+            href: "/servicios/devops-automatizacion",
             description: "Deployments que no fallan un viernes. Pipelines CI/CD, infraestructura como código y automatización de procesos. Todo versionado, todo reproducible, todo auditable.",
             tags: ["Terraform", "Ansible", "GitHub Actions", "Docker"],
         },
@@ -87,6 +91,122 @@ export const siteData = {
             title: "Infraestructura Administrada",
             description: "Tu equipo IT externo, a fracción del costo. Gestión mensual de toda tu infraestructura cloud. Actualizaciones, parches, backups verificados y soporte técnico. Tú te enfocas en tu negocio.",
             tags: ["Retainer mensual", "SLA 99.9%", "Soporte 24/5"],
+        },
+    ],
+
+    // --- Service Landing Pages ---
+    servicePages: [
+        {
+            slug: "migracion-azure",
+            navLabel: "Migración a Azure",
+            title: "Migración a Azure sin downtime | Helix Cloud",
+            metaDescription: "Migración a Microsoft Azure sin interrupciones para empresas en Panamá y LATAM. Evaluación, plan por fases, Terraform, backups y soporte post-migración.",
+            heading: "Migración a Azure sin downtime",
+            tagline: "Llevamos tu infraestructura actual a Azure con un plan estructurado, sin detener tus operaciones.",
+            serviceType: "Cloud Migration",
+            overview: [
+                "Cada migración comienza con un diagnóstico detallado de tu infraestructura actual: servidores, dependencias, cargas críticas y costos. A partir de ahí diseñamos una estrategia por fases para mover todo a Azure sin afectar tu operación.",
+                "Trabajamos con Infraestructura como Código (Terraform) para que tu nuevo entorno sea reproducible, auditable y fácil de mantener. Cada fase incluye backups verificados y un plan de rollback.",
+            ],
+            breakdown: [
+                { title: "Evaluación y discovery", description: "Inventario completo de servidores, aplicaciones, dependencias y costos actuales para dimensionar la migración." },
+                { title: "Diseño de arquitectura", description: "Landing zone en Azure con redes, identidad (Entra ID), seguridad y gobernanza desde el primer día." },
+                { title: "Migración por fases", description: "Rehost, replatform o refactor según cada carga de trabajo, priorizando lo no crítico para validar el proceso." },
+                { title: "Optimización post-migración", description: "Rightsizing, backups verificados, monitoreo con Zabbix/Grafana y documentación completa de tu nuevo entorno." },
+            ],
+            techStack: ["Azure", "Terraform", "AzCopy", "Ansible", "Zabbix", "Grafana"],
+            benefits: [
+                "Cero downtime en horario laboral",
+                "Costos estimados antes de migrar",
+                "Backups y rollback planificados",
+                "Documentación completa del entorno",
+            ],
+            ctaLabel: "Solicitar migración",
+            ctaHref: "#contact",
+        },
+        {
+            slug: "microsoft-365",
+            navLabel: "Microsoft 365",
+            title: "Microsoft 365 y Entra ID | Helix Cloud",
+            metaDescription: "Implementación y administración de Microsoft 365 y Entra ID en Panamá. Migración de correo, identidades, MFA, políticas de seguridad y colaboración.",
+            heading: "Microsoft 365 y Entra ID",
+            tagline: "Tu equipo colabora mejor y tus datos están protegidos con políticas de seguridad correctas desde el día uno.",
+            serviceType: "Microsoft 365 Administration",
+            overview: [
+                "Configuramos Microsoft 365 correctamente: migración de buzones, dominio, identidades y políticas de seguridad. Sin configuraciones por defecto que dejen huecos.",
+                "Con Entra ID implementamos identidad centralizada, MFA y Conditional Access para que el acceso esté controlado, auditado y documentado.",
+            ],
+            breakdown: [
+                { title: "Migración de correo y datos", description: "Migración de buzones desde Exchange, IMAP o Google Workspace sin pérdida de información ni downtime." },
+                { title: "Dominio y DNS", description: "Configuración de dominio, SPF, DKIM y DMARC para que tu correo llegue y tu marca esté protegida." },
+                { title: "Entra ID e identidades", description: "Directorio centralizado, SSO para aplicaciones corporativas y MFA para todos los usuarios." },
+                { title: "Políticas de seguridad", description: "Conditional Access, DLP y políticas base de Zero Trust para proteger tus datos desde el inicio." },
+            ],
+            techStack: ["Microsoft 365", "Entra ID", "Exchange", "SharePoint", "Teams"],
+            benefits: [
+                "MFA y Zero Trust desde el día uno",
+                "Migración sin pérdida de correo",
+                "SSO para aplicaciones corporativas",
+                "Administración y soporte continuo",
+            ],
+            ctaLabel: "Solicitar implementación",
+            ctaHref: "#contact",
+        },
+        {
+            slug: "devops-automatizacion",
+            navLabel: "DevOps",
+            title: "DevOps y Automatización | Helix Cloud",
+            metaDescription: "DevOps a medida: pipelines CI/CD, Infraestructura como Código con Terraform y Ansible, GitHub Actions, Docker y Kubernetes. Deployments reproducibles y auditables.",
+            heading: "DevOps y Automatización",
+            tagline: "Deployments que no fallan un viernes: pipelines CI/CD e infraestructura como código, todo versionado y auditable.",
+            serviceType: "DevOps Consulting",
+            overview: [
+                "Automatizamos tu ciclo de vida de software e infraestructura: desde el commit hasta producción, con pipelines CI/CD, IaC y contenedores.",
+                "Todo queda versionado y reproducible. Si algo falla, se reconstruye en minutos y los rollbacks dejan de ser una pesadilla.",
+            ],
+            breakdown: [
+                { title: "Auditoría de procesos", description: "Analizamos tu flujo actual de deploys, puntos de falla y oportunidades de automatización." },
+                { title: "Pipelines CI/CD", description: "GitHub Actions o Azure DevOps: build, test y deploy automáticos con aprobaciones y notificaciones." },
+                { title: "Infraestructura como Código", description: "Terraform y Ansible para provisionar y configurar entornos completos de forma reproducible." },
+                { title: "Contenedores", description: "Docker y Kubernetes para empaquetar y orquestar tus aplicaciones con escalabilidad." },
+            ],
+            techStack: ["Terraform", "Ansible", "GitHub Actions", "Docker", "Kubernetes", "Azure DevOps"],
+            benefits: [
+                "Deployments reproducibles y predecibles",
+                "Menos errores por procesos manuales",
+                "Rollback en minutos",
+                "Todo versionado y auditable",
+            ],
+            ctaLabel: "Automatizar mi operación",
+            ctaHref: "#contact",
+        },
+        {
+            slug: "auditoria-cloud",
+            navLabel: "Auditoría Cloud",
+            title: "Auditoría de Seguridad y Costos Cloud | Helix Cloud",
+            metaDescription: "Auditoría de seguridad y costos cloud (Azure/GCP): rightsizing, evaluación de vulnerabilidades y reporte de optimización. Pago único con resultados accionables.",
+            heading: "Auditoría de Seguridad y Costos Cloud",
+            tagline: "Descubre fugas de costos y vulnerabilidades de seguridad en tu nube con un reporte claro y accionable.",
+            serviceType: "Cloud Security Audit",
+            overview: [
+                "Revisamos tu entorno cloud (Azure o GCP) para encontrar recursos sobredimensionados, gastos innecesarios y brechas de seguridad.",
+                "Entregamos un reporte priorizado por impacto con recomendaciones concretas y el ROI esperado de cada corrección.",
+            ],
+            breakdown: [
+                { title: "Rightsizing de recursos", description: "Análisis de VMs, storage y bases de datos para ajustar el tamaño a la demanda real y reducir costos." },
+                { title: "Evaluación de vulnerabilidades", description: "Revisión de configuraciones, permisos y accesos para detectar brechas de seguridad en tu nube." },
+                { title: "Optimización de costos", description: "Identificación de recursos ociosos, reservas y modelos de pago para maximizar tu inversión cloud." },
+                { title: "Reporte ejecutivo", description: "Documento final con hallazgos priorizados por impacto, costo y esfuerzo de corrección." },
+            ],
+            techStack: ["Azure", "GCP", "Terraform", "Zabbix", "Grafana"],
+            benefits: [
+                "Reporte accionable en días",
+                "Prioridades por impacto y ROI",
+                "Sin compromiso mensual",
+                "Recomendaciones concretas",
+            ],
+            ctaLabel: "Solicitar auditoría",
+            ctaHref: "#contact",
         },
     ],
 

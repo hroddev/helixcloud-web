@@ -5,9 +5,18 @@ import "../styles/global.css";
 interface Props {
 	title: string;
 	description?: string;
+	ogImage?: string;
+	ogType?: string;
+	jsonLd?: string;
 }
 
-const { title, description = siteData.siteDescription } = Astro.props;
+const {
+	title,
+	description = siteData.siteDescription,
+	ogImage = "/helix-cloud-logo.webp",
+	ogType = "website",
+	jsonLd,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -16,7 +25,22 @@ const { title, description = siteData.siteDescription } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
+		<link rel="canonical" href={new URL(Astro.url.pathname, siteData.siteUrl).href} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<!-- OpenGraph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content={ogType} />
+		<meta property="og:url" content={new URL(Astro.url.pathname, siteData.siteUrl).href} />
+		<meta property="og:image" content={new URL(ogImage, siteData.siteUrl).href} />
+		<meta property="og:site_name" content="Helix Cloud" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(ogImage, siteData.siteUrl).href} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -25,6 +49,8 @@ const { title, description = siteData.siteDescription } = Astro.props;
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		{jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
 	</head>
 	<body
 		id="top"
