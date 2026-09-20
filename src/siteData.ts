@@ -25,7 +25,7 @@ export const siteData = {
     aboutBadges: ["Cloud Expert", "DevOps Leader"],
     aboutParagraphs: [
         "With over <span class=\"text-white font-bold border-b-2 border-blue-500/30 pb-0.5\">15 years</span> in the IT trenches, I've evolved from systems administration to architecting complex, cloud-native ecosystems for global enterprises.",
-        "My journey has been defined by a passion for <span class=\"text-white font-semibold\">Infrastructure as Code (IaC)</span> and automation. I specialize in bridging the gap between legacy infrastructure and modern, scalable cloud solutions on <span class=\"text-blue-400 font-semibold tracking-wide\">Microsoft Azure</span> and <span class=\"text-blue-400 font-semibold tracking-wide\">GPC</span>.",
+        "My journey has been defined by a passion for <span class=\"text-white font-semibold\">Infrastructure as Code (IaC)</span> and automation. I specialize in bridging the gap between legacy infrastructure and modern, scalable cloud solutions on <span class=\"text-blue-400 font-semibold tracking-wide\">Microsoft Azure</span> and <span class=\"text-blue-400 font-semibold tracking-wide\">GCP</span>.",
         "From leading <span class=\"text-white\">global SD-WAN deployments</span> across 6 countries to reducing operational costs by <span class=\"text-green-400 font-bold\">30%</span> through cloud optimization, I focus on delivering tangible business value through engineering precision and proactive monitoring."
     ],
     aboutDegree: "Bachelor's Degree",
@@ -60,7 +60,7 @@ export const siteData = {
     services: [
         {
             title: "Migración a la Nube",
-            description: "Mueve tu empresa a Azure o GPC sin downtime. Llevamos tu infraestructura actual a la nube con un plan estructurado. Tus operaciones continúan mientras modernizamos.",
+            description: "Mueve tu empresa a Azure o GCP sin downtime. Llevamos tu infraestructura actual a la nube con un plan estructurado. Tus operaciones continúan mientras modernizamos.",
             tags: ["Azure", "GCP", "Terraform", "Sin downtime"],
         },
         {
@@ -97,7 +97,7 @@ export const siteData = {
             title: "Auditoría de Seguridad y Costos Cloud",
             price: "$300",
             period: "Pago único",
-            description: "Revisión completa de tu entorno Azure o GPC para detectar fugas de costos y vulnerabilidades de seguridad.",
+            description: "Revisión completa de tu entorno Azure o GCP para detectar fugas de costos y vulnerabilidades de seguridad.",
             includes: [
                 "Análisis de rightsizing de recursos",
                 "Evaluación de vulnerabilidades de seguridad",
