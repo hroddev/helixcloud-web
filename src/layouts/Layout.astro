@@ -17,10 +17,57 @@ const {
 	ogType = "website",
 	jsonLd,
 } = Astro.props;
+
+// Schema.org global (ProfessionalService) para SEO Local B2B
+const globalJsonLd = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	name: "Helix Cloud",
+	url: siteData.siteUrl,
+	description: siteData.siteDescription,
+	areaServed: [
+		{ "@type": "Country", name: "Panama" },
+		{ "@type": "AdministrativeArea", name: "LATAM" },
+	],
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "Ciudad de Panamá",
+		addressCountry: "PA",
+	},
+	hasOfferCatalog: {
+		"@type": "OfferCatalog",
+		name: "Servicios de Helix Cloud",
+		itemListElement: [
+			{
+				"@type": "Offer",
+				itemOffered: { "@type": "Service", name: "Cloud Migration" },
+			},
+			{
+				"@type": "Offer",
+				itemOffered: { "@type": "Service", name: "DevOps Consulting" },
+			},
+			{
+				"@type": "Offer",
+				itemOffered: {
+					"@type": "Service",
+					name: "Managed Infrastructure",
+				},
+			},
+			{
+				"@type": "Offer",
+				itemOffered: {
+					"@type": "Service",
+					name: "Microsoft 365 Administration",
+				},
+			},
+		],
+	},
+	sameAs: [siteData.linkedinUrl, siteData.githubUrl],
+};
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -50,6 +97,7 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 
+		<script type="application/ld+json" set:html={JSON.stringify(globalJsonLd)} />
 		{jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
 	</head>
 	<body
