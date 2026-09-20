@@ -48,8 +48,8 @@ app.http('contact', {
             }
 
             // 2. INPUT VALIDATION
-            if (!body.email || !body.message) {
-                return { status: 400, body: JSON.stringify({ error: "Email and message are required." }) };
+            if (!body.email || !body.name || !body.company || !body.message) {
+                return { status: 400, body: JSON.stringify({ error: "Name, email, company and message are required." }) };
             }
 
             if (body.message.length > 1000) {
@@ -62,10 +62,17 @@ app.http('contact', {
                 return { status: 400, body: JSON.stringify({ error: "Invalid email format." }) };
             }
 
+            const infrastructure = Array.isArray(body.infrastructure)
+                ? body.infrastructure
+                : (body.infrastructure ? [body.infrastructure] : []);
+
             const entry = {
                 id: new Date().toISOString() + '-' + Math.random().toString(36).substr(2, 9),
                 email: body.email, // Partition Key
                 name: body.name || 'Anonymous',
+                company: body.company || '',
+                service: body.service || '',
+                infrastructure: infrastructure,
                 message: body.message,
                 timestamp: new Date().toISOString(),
                 source: 'website',
@@ -88,12 +95,15 @@ app.http('contact', {
                         senderAddress: senderAddress,
                         content: {
                             subject: `New Contact Form: ${body.name || 'Anonymous'}`,
-                            plainText: `Email: ${body.email}\nName: ${body.name || 'Anonymous'}\nMessage: ${body.message}\nIP: ${clientIp}`,
+                            plainText: `Name: ${body.name || 'Anonymous'}\nEmail: ${body.email}\nCompany: ${body.company || 'N/A'}\nService: ${body.service || 'N/A'}\nInfrastructure: ${infrastructure.join(', ') || 'N/A'}\nMessage: ${body.message}\nIP: ${clientIp}`,
                             html: `
                                 <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee;">
                                     <h2 style="color: #2563eb;">New Contact Form Submission</h2>
                                     <p><strong>Name:</strong> ${body.name || 'Anonymous'}</p>
                                     <p><strong>Email:</strong> ${body.email}</p>
+                                    <p><strong>Company:</strong> ${body.company || 'N/A'}</p>
+                                    <p><strong>Service:</strong> ${body.service || 'N/A'}</p>
+                                    <p><strong>Infrastructure:</strong> ${infrastructure.join(', ') || 'N/A'}</p>
                                     <p><strong>Message:</strong></p>
                                     <div style="background: #f9fafb; padding: 15px; border-radius: 8px;">
                                         ${body.message}

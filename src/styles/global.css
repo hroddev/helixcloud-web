@@ -18,6 +18,7 @@ body,
   background-color: var(--color-dark-bg);
   color: white;
   font-family: var(--font-sans);
+  color-scheme: dark;
 }
 
 /* Glassmorphism utilities */
@@ -39,4 +40,10 @@ body,
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Dropdowns nativos (select) en tema oscuro */
+select option {
+  background-color: #111827;
+  color: #ffffff;
 }
