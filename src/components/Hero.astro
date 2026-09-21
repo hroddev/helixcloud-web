@@ -35,56 +35,45 @@ import { siteData } from "../siteData";
                 ></span>
             </span>
             <span class="text-sm font-light tracking-wide text-gray-300"
-                >Disponible para nuevos proyectos.</span
+                >{siteData.heroEyebrow}</span
             >
         </div>
 
         <h1
-            class="text-5xl md:text-7xl font-bold mb-8 md:mb-6 tracking-tight leading-tight"
+            class="text-4xl md:text-6xl font-bold mb-8 md:mb-6 tracking-tight leading-tight max-w-4xl mx-auto"
         >
             {siteData.heroTitle}
-            <br />
-            <span class="text-gradient text-3xl md:text-7xl block mt-4 md:mt-0">{siteData.heroSubtitle}</span>
         </h1>
 
-        {siteData.heroTagline && (
-            <p
-                class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
-            >
-                {siteData.heroTagline}
-            </p>
-        )}
+        <p class="text-lg md:text-xl text-gray-300 mb-3 max-w-2xl mx-auto leading-relaxed">
+            {siteData.heroSubtitle}
+        </p>
+
+        <p
+            class="text-base md:text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+        >
+            {siteData.heroDescription}
+        </p>
 
         <div
             class="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
             <a
-                href="#contact"
+                href={siteData.whatsappUrl}
+                target="_blank"
+                rel="noopener"
                 class="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white rounded-xl font-semibold shadow-lg shadow-blue-900/30 transition-all hover:scale-105"
             >
-                Diagnóstico gratuito →
+                {siteData.heroCtaLabel}
             </a>
             <a
-                href="#services"
+                href="#pricing"
                 class="px-8 py-4 glass text-white rounded-xl font-semibold hover:bg-white/10 transition-all border border-white/10"
             >
-                Ver servicios
+                Ver paquetes
             </a>
         </div>
-
-        <!-- Stats Section -->
-        <div class="grid grid-cols-3 gap-6 mt-16 max-w-2xl mx-auto">
-            {siteData.heroStats.map((stat) => (
-                <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-bold text-blue-400 mb-2">
-                        {stat.value}
-                    </div>
-                    <div class="text-sm text-gray-400">
-                        {stat.label}
-                    </div>
-                </div>
-            ))}
-        </div>
+        <p class="text-xs text-gray-500 mt-6">{siteData.responseTimeNote}</p>
     </div>
 
     <!-- Scroll Indicator -->

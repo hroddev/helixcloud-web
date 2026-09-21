@@ -1,327 +1,218 @@
 export const siteData = {
     // --- Personal Information ---
     authorName: "Hector Rodríguez",
-    authorRole: "Azure DevOps & Cloud Infrastructure Specialist",
+    authorRole: "IT Infrastructure & Security Specialist",
 
     // --- SEO & Global ---
-    siteTitle: "Helix Cloud - Senior DevOps & Infrastructure Portfolio",
-    siteDescription: "Senior DevOps Engineer specializing in scalable Cloud Infrastructure, Infrastructure as Code, and production-grade Optimization on Microsoft Azure.",
+    siteTitle: "Helix Cloud — Seguridad, Red y Continuidad TI para PyMEs en Panamá",
+    siteDescription: "Seguridad Microsoft 365 y redes multisucursal para empresas de 10 a 40 empleados en Panamá. Diagnóstico gratuito de 30 minutos.",
     siteUrl: "https://helixcloud.dev",
 
+    // --- Contact channels ---
+    whatsappUrl: "https://wa.me/50766366261?text=Hola%2C%20vi%20su%20sitio%20HelixCloud.dev%20y%20me%20interesa%20el%20diagn%C3%B3stico%20gratuito",
+    responseTimeNote: "Respuesta en horario hábil (L-V, 8:00–18:00). Guardia extendida contratable.",
+
     // --- Hero Section ---
-    heroTitle: "La infra que necesitas",
-    heroSubtitle: "Cloud, Microsoft 365 y DevOps para Panamá",
-    heroTagline: "",
+    heroEyebrow: "Disponible para nuevos proyectos en Panamá.",
+    heroTitle: "Tu red y tu Microsoft 365, resueltos",
+    heroSubtitle: "Seguridad y continuidad para empresas con 1 a 4 sedes en Panamá",
+    heroDescription:
+        "Trabajo con empresas de 10 a 40 empleados que ya usan Microsoft 365 y no pueden permitirse que la red se caiga o que entre un correo de phishing.",
+    heroCtaLabel: "Diagnóstico gratuito de 30 min →",
 
-    // --- Hero Stats ---
-    heroStats: [
-        { value: "15+", label: "Años de experiencia" },
-        { value: "6", label: "Países implementados" },
-        { value: "30%", label: "Reducción de costos promedio" },
+    // --- Problems Section ---
+    problemsTitle: "Problemas que reconoces si tu empresa opera en Panamá",
+    problems: [
+        {
+            title: "La red se cae y pierdes ventas",
+            description:
+                "Una sucursal sin internet o sin VPN es una sucursal que no cobra. Sin monitoreo ni respaldo, te enteras cuando el cliente ya se quejó.",
+        },
+        {
+            title: "Un correo de phishing puede tumbar tu operación",
+            description:
+                "El acceso remoto expuesto y las cuentas de Microsoft 365 sin MFA son la puerta de entrada más común para el robo de credenciales y el ransomware en empresas pequeñas.",
+        },
     ],
 
-    // --- About Section ---
-    yearsOfExperience: "15+",
-    aboutTitle: "Engineering Excellence",
-    aboutBadges: ["Cloud Expert", "DevOps Leader"],
-    aboutParagraphs: [
-        "With over <span class=\"text-white font-bold border-b-2 border-blue-500/30 pb-0.5\">15 years</span> in the IT trenches, I've evolved from systems administration to architecting complex, cloud-native ecosystems for global enterprises.",
-        "My journey has been defined by a passion for <span class=\"text-white font-semibold\">Infrastructure as Code (IaC)</span> and automation. I specialize in bridging the gap between legacy infrastructure and modern, scalable cloud solutions on <span class=\"text-blue-400 font-semibold tracking-wide\">Microsoft Azure</span> and <span class=\"text-blue-400 font-semibold tracking-wide\">GCP</span>.",
-        "From leading <span class=\"text-white\">global SD-WAN deployments</span> across 6 countries to reducing operational costs by <span class=\"text-green-400 font-bold\">30%</span> through cloud optimization, I focus on delivering tangible business value through engineering precision and proactive monitoring."
-    ],
-    aboutDegree: "Bachelor's Degree",
-    aboutDegreeMajor: "Computer Systems",
-    aboutCertifications: "Certified Professional",
-    aboutCertificationsDetail: "GCP & IBM Specialized",
-
-    // --- Stack Section ---
-    stackTitle: "Por Qué HelixCloud",
-    stackDescription: "Lo que te llevas: infraestructura confiable, costos controlados y equipo dedicado a tu crecimiento.",
-    stackBenefits: [
+    // --- One-time packages (proyectos puntuales) ---
+    oneTimePackages: [
         {
-            name: "DevOps & Automatización",
-            benefit: "Infraestructura reproducible. Si algo falla, se reconstruye en minutos con Terraform y Ansible.",
+            key: "seguridad-m365",
+            name: "Arranque Seguro",
+            price: "Desde $1,200",
+            period: "Proyecto único",
+            description:
+                "Hardening de Microsoft 365 y Entra ID: MFA, cierre de accesos remotos expuestos, respaldo verificado e informe ejecutivo.",
+            notIncluded: "No incluye soporte mensual ni monitoreo continuo — eso es el Plan Continuidad.",
+            href: "/servicios/seguridad-microsoft-365/",
+            cta: "Solicitar Arranque Seguro",
         },
         {
-            name: "Cloud Platforms",
-            benefit: "Azure y GCP administrados con visibilidad total de costos y rendimiento en tiempo real.",
-        },
-        {
-            name: "Seguridad",
-            benefit: "Zero Trust implementado correctamente. Acceso solo para quien debe tener acceso, auditado y documentado.",
-        },
-        {
-            name: "Monitoreo",
-            benefit: "Alertas antes de que el problema llegue a tus usuarios. Dashboard en tiempo real para tu equipo.",
+            key: "auditoria",
+            name: "Auditoría de Seguridad y Costos Cloud",
+            price: "Desde $1,200",
+            period: "Proyecto único",
+            description:
+                "Revisión de tu entorno cloud (Azure/GCP) y de tu seguridad perimetral: vulnerabilidades, gasto innecesario y prioridades de corrección.",
+            notIncluded: "No incluye la implementación de las correcciones — se cotiza aparte según hallazgos.",
+            guarantee: "Si no identifico ahorro superior al costo de la auditoría, no me pagas.",
+            href: "#contact",
+            cta: "Solicitar auditoría",
         },
     ],
-    stackFeaturedTech: ["AZURE", "GCP", "TERRAFORM", "KUBERNETES", "VMWARE"],
 
-    // --- Services Section ---
-    services: [
+    // --- Monthly plans (mensualidad) ---
+    monthlyPlans: [
         {
-            title: "Migración a la Nube",
-            href: "/servicios/migracion-azure/",
-            description: "Mueve tu empresa a Azure o GCP sin downtime. Llevamos tu infraestructura actual a la nube con un plan estructurado. Tus operaciones continúan mientras modernizamos.",
-            tags: ["Azure", "GCP", "Terraform", "Sin downtime"],
+            key: "continuidad",
+            name: "Plan Continuidad",
+            price: "Desde $850",
+            period: "/mes",
+            description: "Hasta 25 usuarios, 1 sede: monitoreo, respaldo, parches y gestión de identidad.",
+            notIncluded: "No incluye soporte fuera de horario hábil ni sedes adicionales — ver Plan Multisucursal.",
+            href: "#contact",
+            cta: "Agendar diagnóstico",
         },
         {
-            title: "Microsoft 365 y Entra ID",
-            href: "/servicios/microsoft-365/",
-            description: "Microsoft 365 configurado y administrado correctamente. Implementación completa, gestión de identidades con Entra ID y políticas de seguridad. Tu equipo colabora mejor, tus datos están protegidos.",
-            tags: ["M365", "Entra ID", "Exchange", "SharePoint"],
+            key: "multisucursal",
+            name: "Plan Multisucursal",
+            price: "Desde $350",
+            priceSuffix: "por sede + $30 por usuario",
+            period: "/mes",
+            description: "Red, firewall, SD-WAN y monitoreo distribuido para operaciones con varias sedes.",
+            notIncluded: "No incluye el hardware de firewall/SD-WAN — se cotiza según cantidad de sedes.",
+            href: "/servicios/red-multisucursal/",
+            cta: "Solicitar propuesta",
+        },
+    ],
+
+    // --- Free diagnostic (primary CTA) ---
+    freeDiagnostic: {
+        title: "Diagnóstico inicial",
+        price: "Gratis",
+        duration: "30 minutos",
+        description: "Revisamos tu red y tu Microsoft 365 para detectar riesgos. Sin compromiso.",
+    },
+
+    // --- Cómo trabajamos ---
+    howWeWorkTitle: "Cómo trabajamos",
+    howWeWork: [
+        {
+            step: "1",
+            title: "Diagnóstico",
+            description: "30 minutos por WhatsApp o videollamada para entender tu operación y tus riesgos.",
         },
         {
-            title: "DevOps y Automatización",
-            href: "/servicios/devops-automatizacion/",
-            description: "Deployments que no fallan un viernes. Pipelines CI/CD, infraestructura como código y automatización de procesos. Todo versionado, todo reproducible, todo auditable.",
-            tags: ["Terraform", "Ansible", "GitHub Actions", "Docker"],
+            step: "2",
+            title: "Proyecto",
+            description: "Ejecutamos el paquete que corresponda: seguridad M365 o red multisucursal.",
         },
         {
-            title: "Monitoreo y Observabilidad",
-            description: "Saber que algo falló antes de que te llamen. Visibilidad completa de tu infraestructura en tiempo real. Alertas proactivas configuradas para que los problemas se resuelvan antes de afectar a tus usuarios.",
-            tags: ["Zabbix", "Grafana", "Prometheus"],
+            step: "3",
+            title: "Mensualidad",
+            description: "Si necesitas continuidad, pasamos a un plan mensual con monitoreo, respaldo y soporte.",
+        },
+    ],
+
+    // --- FAQ ---
+    faqTitle: "Preguntas frecuentes",
+    faqItems: [
+        {
+            q: "¿Qué incluye el diagnóstico gratuito de 30 minutos?",
+            a: "Revisamos tu red y tu Microsoft 365 para detectar riesgos. Sales con next steps claros, sin compromiso de compra.",
         },
         {
-            title: "Seguridad Informática",
-            description: "Infraestructura que cumple con los estándares. Evaluación de vulnerabilidades, hardening de servidores y políticas Zero Trust. Tu negocio protegido sin paralizar las operaciones.",
-            tags: ["Zero Trust", "Fortinet", "Auditoría"],
+            q: "¿Trabajan con empresas fuera de Ciudad de Panamá?",
+            a: "Sí, atendemos empresas en todo Panamá. La mayoría del trabajo se hace remoto, con visitas puntuales según el proyecto.",
         },
         {
-            title: "Infraestructura Administrada",
-            description: "Tu equipo IT externo, a fracción del costo. Gestión mensual de toda tu infraestructura cloud. Actualizaciones, parches, backups verificados y soporte técnico. Tú te enfocas en tu negocio.",
-            tags: ["Retainer mensual", "SLA 99.9%", "Soporte 24/5"],
+            q: "¿Cuál es el tiempo de respuesta?",
+            a: "Respuesta en horario hábil (L-V, 8:00–18:00). Si necesitas guardia extendida o cobertura de fin de semana, se contrata aparte.",
+        },
+        {
+            q: "¿Qué tipo de empresa es un buen fit?",
+            a: "Empresas de 10 a 40 empleados, con 1 a 4 sedes, que ya usan Microsoft 365. No trabajamos con micro-negocios de 1-3 personas ni con empresas que ya tienen equipo de plataforma interno.",
+        },
+        {
+            q: "¿Hay contrato de permanencia en los planes mensuales?",
+            a: "No hay contrato de permanencia forzoso. El Plan Continuidad y el Plan Multisucursal se facturan mes a mes.",
+        },
+        {
+            q: "¿Qué pasa si ya tengo un proveedor de TI?",
+            a: "Podemos trabajar junto a tu proveedor actual — por ejemplo, en la parte de seguridad — o hacer una auditoría independiente de lo que ya tienes.",
+        },
+        {
+            q: "¿Qué NO incluye la auditoría de seguridad y costos?",
+            a: "La auditoría identifica y prioriza hallazgos; la implementación de las correcciones se cotiza como proyecto aparte. Si no identifico ahorro superior al costo de la auditoría, no la cobro.",
         },
     ],
 
     // --- Service Landing Pages ---
     servicePages: [
         {
-            slug: "migracion-azure",
-            navLabel: "Migración a Azure",
-            title: "Migración a Azure sin downtime | Helix Cloud",
-            metaDescription: "Migración a Microsoft Azure sin interrupciones para empresas en Panamá y LATAM. Evaluación, plan por fases, Terraform, backups y soporte post-migración.",
-            heading: "Migración a Azure sin downtime",
-            tagline: "Llevamos tu infraestructura actual a Azure con un plan estructurado, sin detener tus operaciones.",
-            serviceType: "Cloud Migration",
+            slug: "seguridad-microsoft-365",
+            navLabel: "Seguridad M365",
+            title: "Seguridad Microsoft 365 y Entra ID en Panamá | Helix Cloud",
+            metaDescription:
+                "Hardening de Microsoft 365 y Entra ID para empresas en Panamá: MFA, cierre de accesos remotos expuestos y respaldo verificado. Desde $1,200.",
+            heading: "Seguridad Microsoft 365 y Entra ID",
+            tagline: "Cierra las puertas más comunes de entrada para el phishing y el robo de credenciales, sin paralizar tu operación.",
+            serviceType: "Managed Security Service",
             overview: [
-                "Cada migración comienza con un diagnóstico detallado de tu infraestructura actual: servidores, dependencias, cargas críticas y costos. A partir de ahí diseñamos una estrategia por fases para mover todo a Azure sin afectar tu operación.",
-                "Trabajamos con Infraestructura como Código (Terraform) para que tu nuevo entorno sea reproducible, auditable y fácil de mantener. Cada fase incluye backups verificados y un plan de rollback.",
+                "La mayoría de los incidentes de seguridad en empresas pequeñas no empiezan con un ataque sofisticado: empiezan con una cuenta de Microsoft 365 sin MFA o un acceso remoto expuesto a internet.",
+                "El Arranque Seguro cierra esas puertas en un proyecto de alcance definido: MFA y Conditional Access en Entra ID, cierre de accesos remotos expuestos, respaldo verificado y un informe ejecutivo con lo que se corrigió y lo que sigue pendiente.",
             ],
             breakdown: [
-                { title: "Evaluación y discovery", description: "Inventario completo de servidores, aplicaciones, dependencias y costos actuales para dimensionar la migración." },
-                { title: "Diseño de arquitectura", description: "Landing zone en Azure con redes, identidad (Entra ID), seguridad y gobernanza desde el primer día." },
-                { title: "Migración por fases", description: "Rehost, replatform o refactor según cada carga de trabajo, priorizando lo no crítico para validar el proceso." },
-                { title: "Optimización post-migración", description: "Rightsizing, backups verificados, monitoreo con Zabbix/Grafana y documentación completa de tu nuevo entorno." },
+                { title: "MFA y Conditional Access", description: "Activación de MFA para todos los usuarios y políticas de Conditional Access en Entra ID según el riesgo de cada acceso." },
+                { title: "Cierre de accesos remotos expuestos", description: "Identificación y cierre de puertos, VPNs y accesos remotos expuestos directamente a internet." },
+                { title: "Respaldo verificado", description: "Verificación de que tus respaldos de correo y archivos existen, se completan y se pueden restaurar." },
+                { title: "Informe ejecutivo", description: "Documento con lo corregido, el riesgo residual y las siguientes prioridades de seguridad." },
             ],
-            techStack: ["Azure", "Terraform", "AzCopy", "Ansible", "Zabbix", "Grafana"],
+            techStack: ["Microsoft 365", "Entra ID", "MFA", "Conditional Access"],
             benefits: [
-                "Cero downtime en horario laboral",
-                "Costos estimados antes de migrar",
-                "Backups y rollback planificados",
-                "Documentación completa del entorno",
+                "MFA y Conditional Access activos en días, no meses",
+                "Accesos remotos expuestos identificados y cerrados",
+                "Respaldo verificado, no asumido",
+                "Informe ejecutivo con prioridades claras",
             ],
-            ctaLabel: "Solicitar migración",
+            price: "Desde $1,200",
+            priceNote: "Proyecto único",
+            notIncluded: "No incluye soporte mensual ni monitoreo continuo — eso es el Plan Continuidad.",
+            ctaLabel: "Solicitar Arranque Seguro",
             ctaHref: "#contact",
         },
         {
-            slug: "microsoft-365",
-            navLabel: "Microsoft 365",
-            title: "Microsoft 365 y Entra ID | Helix Cloud",
-            metaDescription: "Implementación y administración de Microsoft 365 y Entra ID en Panamá. Migración de correo, identidades, MFA, políticas de seguridad y colaboración.",
-            heading: "Microsoft 365 y Entra ID",
-            tagline: "Tu equipo colabora mejor y tus datos están protegidos con políticas de seguridad correctas desde el día uno.",
-            serviceType: "Microsoft 365 Administration",
+            slug: "red-multisucursal",
+            navLabel: "Red Multisucursal",
+            title: "Red y Seguridad Multisucursal en Panamá | Helix Cloud",
+            metaDescription:
+                "Firewall, SD-WAN y monitoreo distribuido para empresas con varias sedes en Panamá. Desde $350 por sede + $30 por usuario al mes.",
+            heading: "Red y Seguridad Multisucursal",
+            tagline: "Firewall, SD-WAN y monitoreo distribuido para que cada sede funcione como si fuera una sola red confiable.",
+            serviceType: "Managed Network Service",
             overview: [
-                "Configuramos Microsoft 365 correctamente: migración de buzones, dominio, identidades y políticas de seguridad. Sin configuraciones por defecto que dejen huecos.",
-                "Con Entra ID implementamos identidad centralizada, MFA y Conditional Access para que el acceso esté controlado, auditado y documentado.",
+                "Cuando tienes varias sedes, cada una es un punto de falla distinto: conectividad, seguridad perimetral y visibilidad se vuelven problemas por separado si no hay una red diseñada como una sola.",
+                "El Plan Multisucursal conecta y protege cada sede con firewall y SD-WAN, con monitoreo distribuido desde un solo lugar y soporte mensual para que el crecimiento no dependa de apagar incendios.",
             ],
             breakdown: [
-                { title: "Migración de correo y datos", description: "Migración de buzones desde Exchange, IMAP o Google Workspace sin pérdida de información ni downtime." },
-                { title: "Dominio y DNS", description: "Configuración de dominio, SPF, DKIM y DMARC para que tu correo llegue y tu marca esté protegida." },
-                { title: "Entra ID e identidades", description: "Directorio centralizado, SSO para aplicaciones corporativas y MFA para todos los usuarios." },
-                { title: "Políticas de seguridad", description: "Conditional Access, DLP y políticas base de Zero Trust para proteger tus datos desde el inicio." },
+                { title: "Diseño de red por sede", description: "Arquitectura de red y conectividad adaptada a la realidad de cada sede." },
+                { title: "Firewall y SD-WAN", description: "Seguridad perimetral y enrutamiento inteligente entre sedes con SD-WAN." },
+                { title: "Monitoreo distribuido", description: "Visibilidad centralizada del estado de red y seguridad de todas las sedes." },
+                { title: "Soporte mensual", description: "Gestión, parches y soporte continuo en horario hábil para toda la red." },
             ],
-            techStack: ["Microsoft 365", "Entra ID", "Exchange", "SharePoint", "Teams"],
+            techStack: ["SD-WAN", "Firewall", "Monitoreo distribuido"],
             benefits: [
-                "MFA y Zero Trust desde el día uno",
-                "Migración sin pérdida de correo",
-                "SSO para aplicaciones corporativas",
-                "Administración y soporte continuo",
+                "Visibilidad centralizada de todas las sedes",
+                "Seguridad perimetral consistente por sede",
+                "Menos incidentes de conectividad",
+                "Soporte mensual incluido",
             ],
-            ctaLabel: "Solicitar implementación",
+            price: "Desde $350 por sede + $30 por usuario",
+            priceNote: "/mes",
+            notIncluded: "No incluye el hardware de firewall/SD-WAN — se cotiza según cantidad de sedes.",
+            ctaLabel: "Solicitar propuesta",
             ctaHref: "#contact",
-        },
-        {
-            slug: "devops-automatizacion",
-            navLabel: "DevOps",
-            title: "DevOps y Automatización | Helix Cloud",
-            metaDescription: "DevOps a medida: pipelines CI/CD, Infraestructura como Código con Terraform y Ansible, GitHub Actions, Docker y Kubernetes. Deployments reproducibles y auditables.",
-            heading: "DevOps y Automatización",
-            tagline: "Deployments que no fallan un viernes: pipelines CI/CD e infraestructura como código, todo versionado y auditable.",
-            serviceType: "DevOps Consulting",
-            overview: [
-                "Automatizamos tu ciclo de vida de software e infraestructura: desde el commit hasta producción, con pipelines CI/CD, IaC y contenedores.",
-                "Todo queda versionado y reproducible. Si algo falla, se reconstruye en minutos y los rollbacks dejan de ser una pesadilla.",
-            ],
-            breakdown: [
-                { title: "Auditoría de procesos", description: "Analizamos tu flujo actual de deploys, puntos de falla y oportunidades de automatización." },
-                { title: "Pipelines CI/CD", description: "GitHub Actions o Azure DevOps: build, test y deploy automáticos con aprobaciones y notificaciones." },
-                { title: "Infraestructura como Código", description: "Terraform y Ansible para provisionar y configurar entornos completos de forma reproducible." },
-                { title: "Contenedores", description: "Docker y Kubernetes para empaquetar y orquestar tus aplicaciones con escalabilidad." },
-            ],
-            techStack: ["Terraform", "Ansible", "GitHub Actions", "Docker", "Kubernetes", "Azure DevOps"],
-            benefits: [
-                "Deployments reproducibles y predecibles",
-                "Menos errores por procesos manuales",
-                "Rollback en minutos",
-                "Todo versionado y auditable",
-            ],
-            ctaLabel: "Automatizar mi operación",
-            ctaHref: "#contact",
-        },
-        {
-            slug: "auditoria-cloud",
-            navLabel: "Auditoría Cloud",
-            title: "Auditoría de Seguridad y Costos Cloud | Helix Cloud",
-            metaDescription: "Auditoría de seguridad y costos cloud (Azure/GCP): rightsizing, evaluación de vulnerabilidades y reporte de optimización. Pago único con resultados accionables.",
-            heading: "Auditoría de Seguridad y Costos Cloud",
-            tagline: "Descubre fugas de costos y vulnerabilidades de seguridad en tu nube con un reporte claro y accionable.",
-            serviceType: "Cloud Security Audit",
-            overview: [
-                "Revisamos tu entorno cloud (Azure o GCP) para encontrar recursos sobredimensionados, gastos innecesarios y brechas de seguridad.",
-                "Entregamos un reporte priorizado por impacto con recomendaciones concretas y el ROI esperado de cada corrección.",
-            ],
-            breakdown: [
-                { title: "Rightsizing de recursos", description: "Análisis de VMs, storage y bases de datos para ajustar el tamaño a la demanda real y reducir costos." },
-                { title: "Evaluación de vulnerabilidades", description: "Revisión de configuraciones, permisos y accesos para detectar brechas de seguridad en tu nube." },
-                { title: "Optimización de costos", description: "Identificación de recursos ociosos, reservas y modelos de pago para maximizar tu inversión cloud." },
-                { title: "Reporte ejecutivo", description: "Documento final con hallazgos priorizados por impacto, costo y esfuerzo de corrección." },
-            ],
-            techStack: ["Azure", "GCP", "Terraform", "Zabbix", "Grafana"],
-            benefits: [
-                "Reporte accionable en días",
-                "Prioridades por impacto y ROI",
-                "Sin compromiso mensual",
-                "Recomendaciones concretas",
-            ],
-            ctaLabel: "Solicitar auditoría",
-            ctaHref: "#contact",
-        },
-    ],
-
-    // --- Starter Services (One-Off / Tripwire) ---
-    starterServices: [
-        {
-            serviceKey: "audit",
-            title: "Auditoría de Seguridad y Costos Cloud",
-            price: "$300",
-            period: "Pago único",
-            description: "Revisión completa de tu entorno Azure o GCP para detectar fugas de costos y vulnerabilidades de seguridad.",
-            includes: [
-                "Análisis de rightsizing de recursos",
-                "Evaluación de vulnerabilidades de seguridad",
-                "Reporte de optimización de costos",
-            ],
-            cta: "Solicitar auditoría →",
-            ctaLink: "#contact",
-            icon: "🔍",
-        },
-        {
-            serviceKey: "migration",
-            title: "Migración Express a Microsoft 365 & Entra ID",
-            price: "$450",
-            period: "Pago único",
-            description: "Lleva tu correo e identidades a Microsoft 365 con políticas de seguridad base desde el primer día.",
-            includes: [
-                "Migración de buzones de correo",
-                "Configuración de dominio",
-                "Políticas de seguridad base",
-            ],
-            cta: "Solicitar migración →",
-            ctaLink: "#contact",
-            icon: "🚀",
-        },
-    ],
-
-    // --- Pricing Section ---
-    pricingPlans: [
-        {
-            name: "Esencial",
-            price: "$500",
-            period: "/mes",
-            description: "Para empresas dando sus primeros pasos en la nube",
-            featured: false,
-            features: [
-                "Microsoft 365 administrado (hasta 25 usuarios)",
-                "Monitoreo básico de infraestructura",
-                "Backup semanal verificado",
-                "Soporte por email — respuesta 48h",
-                "Reporte mensual de salud",
-            ],
-            cta: "Comenzar →",
-            ctaLink: "#contact",
-        },
-        {
-            name: "Profesional",
-            price: "$1,200",
-            period: "/mes",
-            description: "Para empresas medianas que necesitan infraestructura robusta",
-            featured: true,
-            badge: "Más popular",
-            features: [
-                "Microsoft 365 + Entra ID completo (hasta 100 usuarios)",
-                "Azure administrado — VMs, storage, networking",
-                "Monitoreo 24/5 con Zabbix + Grafana",
-                "Backup diario con retención 30 días",
-                "Pipeline CI/CD básico incluido",
-                "Soporte WhatsApp — respuesta 4h",
-                "Reunión mensual de revisión",
-            ],
-            cta: "Agendar demo →",
-            ctaLink: "#contact",
-        },
-        {
-            name: "Enterprise",
-            price: "A medida",
-            period: "",
-            description: "Para empresas con infraestructura compleja o multi-sede",
-            featured: false,
-            features: [
-                "Todo el plan Profesional incluido",
-                "SD-WAN multi-sucursal (Fortinet)",
-                "DevOps y automatización completa",
-                "Seguridad y cumplimiento",
-                "SLA personalizado con penalidades",
-                "Soporte prioritario — respuesta 1h",
-            ],
-            cta: "Solicitar propuesta →",
-            ctaLink: "#contact",
-        },
-    ],
-
-    // --- Success Cases ---
-    successCases: [
-        {
-            industry: "Retail",
-            size: "12 sucursales en 6 países",
-            challenge: "Conectar sucursales en 6 países con conectividad confiable y centralizada",
-            solution: "Implementación de Fortinet SD-WAN con centro de datos en VMware y Azure como respaldo",
-            result: "Alta disponibilidad en todas las sucursales, reducción de incidentes de conectividad en 80%",
-        },
-        {
-            industry: "Servicios",
-            size: "Empresa mediana",
-            challenge: "Costos de Azure creciendo sin control ni visibilidad",
-            solution: "Auditoría de recursos, rightsizing de VMs, implementación de políticas de gobernanza",
-            result: "30% de reducción en costos operativos",
-        },
-        {
-            industry: "Banca",
-            size: "Outsourcing empresarial",
-            challenge: "Infraestructura legacy sin monitoreo ni redundancia",
-            solution: "Migración a infraestructura virtualizada con monitoreo proactivo (Zabbix + Grafana)",
-            result: "SLA mejorado, cero incidentes críticos en 8 meses consecutivos",
         },
     ],
 

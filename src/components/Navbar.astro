@@ -6,14 +6,14 @@ const isHome = Astro.url.pathname === "/";
 const links = [
   {
     name: "Servicios",
-    href: isHome ? "#services" : "/#services",
+    href: isHome ? "#problemas" : "/#problemas",
     children: siteData.servicePages.map((s) => ({
       name: s.navLabel,
       href: `/servicios/${s.slug}/`,
     })),
   },
-  { name: "Precios", href: isHome ? "#pricing" : "/#pricing" },
-  { name: "Resultados", href: isHome ? "#success-cases" : "/#success-cases" },
+  { name: "Paquetes", href: isHome ? "#pricing" : "/#pricing" },
+  { name: "FAQ", href: isHome ? "#faq" : "/#faq" },
   { name: "Contacto", href: isHome ? "#contact" : "/#contact" },
 ];
 ---
