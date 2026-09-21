@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import RetailLanding from "../components/RetailLanding.astro";
+import FAQ from "../components/FAQ.astro";
+import Footer from "../components/Footer.astro";
+import { retail } from "../data/sections/retail";
+import { siteData } from "../siteData";
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "ITService",
+	name: retail.plan.name,
+	description: retail.seo.description,
+	serviceType: "Managed Network Service",
+	areaServed: ["Panama"],
+	provider: {
+		"@type": "ProfessionalService",
+		name: "Helix Cloud",
+		url: siteData.siteUrl,
+		areaServed: ["Panama"],
+		sameAs: [siteData.linkedinUrl, siteData.githubUrl],
+	},
+};
+---
+
+<Layout title={retail.seo.title} description={retail.seo.description} ogType="article" jsonLd={JSON.stringify(jsonLd)}>
+	<Navbar />
+	<RetailLanding />
+	<FAQ title="Preguntas frecuentes" items={retail.faq} id="faq" />
+	<Footer />
+</Layout>

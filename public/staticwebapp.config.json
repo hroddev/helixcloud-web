@@ -3,6 +3,26 @@
     {
       "route": "/404",
       "rewrite": "/404.html"
+    },
+    {
+      "route": "/servicios/microsoft-365",
+      "redirect": "/servicios/seguridad-microsoft-365/",
+      "statusCode": 301
+    },
+    {
+      "route": "/servicios/auditoria-cloud",
+      "redirect": "/#pricing",
+      "statusCode": 301
+    },
+    {
+      "route": "/servicios/migracion-azure",
+      "redirect": "/",
+      "statusCode": 301
+    },
+    {
+      "route": "/servicios/devops-automatizacion",
+      "redirect": "/",
+      "statusCode": 301
     }
   ],
   "navigationFallback": {

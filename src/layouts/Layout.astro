@@ -25,10 +25,7 @@ const globalJsonLd = {
 	name: "Helix Cloud",
 	url: siteData.siteUrl,
 	description: siteData.siteDescription,
-	areaServed: [
-		{ "@type": "Country", name: "Panama" },
-		{ "@type": "AdministrativeArea", name: "LATAM" },
-	],
+	areaServed: [{ "@type": "Country", name: "Panama" }],
 	address: {
 		"@type": "PostalAddress",
 		addressLocality: "Ciudad de Panamá",
@@ -38,28 +35,20 @@ const globalJsonLd = {
 		"@type": "OfferCatalog",
 		name: "Servicios de Helix Cloud",
 		itemListElement: [
-			{
+			...siteData.oneTimePackages.map((pkg) => ({
 				"@type": "Offer",
-				itemOffered: { "@type": "Service", name: "Cloud Migration" },
-			},
-			{
+				name: pkg.name,
+				description: pkg.description,
+				priceCurrency: "USD",
+				itemOffered: { "@type": "Service", name: pkg.name },
+			})),
+			...siteData.monthlyPlans.map((plan) => ({
 				"@type": "Offer",
-				itemOffered: { "@type": "Service", name: "DevOps Consulting" },
-			},
-			{
-				"@type": "Offer",
-				itemOffered: {
-					"@type": "Service",
-					name: "Managed Infrastructure",
-				},
-			},
-			{
-				"@type": "Offer",
-				itemOffered: {
-					"@type": "Service",
-					name: "Microsoft 365 Administration",
-				},
-			},
+				name: plan.name,
+				description: plan.description,
+				priceCurrency: "USD",
+				itemOffered: { "@type": "Service", name: plan.name },
+			})),
 		],
 	},
 	sameAs: [siteData.linkedinUrl, siteData.githubUrl],
@@ -73,6 +62,8 @@ const globalJsonLd = {
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="canonical" href={new URL(Astro.url.pathname, siteData.siteUrl).href} />
+		<link rel="alternate" hreflang="es-PA" href={new URL(Astro.url.pathname, siteData.siteUrl).href} />
+		<link rel="alternate" hreflang="x-default" href={new URL(Astro.url.pathname, siteData.siteUrl).href} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
 		<!-- OpenGraph -->

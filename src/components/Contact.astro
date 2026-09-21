@@ -28,7 +28,7 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || "";
 
         <!-- WhatsApp CTA -->
         <a
-            href="https://wa.me/50766366261?text=Hola%2C%20vi%20su%20sitio%20HelixCloud.dev%20y%20me%20interesa%20conocer%20sus%20servicios"
+            href={siteData.whatsappUrl}
             target="_blank"
             class="inline-flex items-center gap-6 px-10 py-4 border-2 border-blue-500 text-blue-400 rounded-xl font-semibold hover:bg-blue-500/10 transition-all hover:border-blue-400 mb-8"
         >
@@ -110,18 +110,20 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || "";
                             <option value="" disabled selected>
                                 Selecciona una opción
                             </option>
+                            <option value="diagnostico">
+                                Diagnóstico gratuito / no estoy seguro
+                            </option>
+                            <option value="seguridad-m365">
+                                Arranque Seguro (Seguridad M365 / Entra ID)
+                            </option>
                             <option value="auditoria">
-                                Auditoría de Costos y Nube (Pago único)
+                                Auditoría de Seguridad y Costos Cloud
                             </option>
-                            <option value="migracion-m365">
-                                Migración a Microsoft 365 / Entra ID
+                            <option value="continuidad">
+                                Plan Continuidad (mensual)
                             </option>
-                            <option value="infraestructura">
-                                Infraestructura Administrada (Plan Esencial /
-                                Profesional)
-                            </option>
-                            <option value="devops">
-                                DevOps & Automatización a medida
+                            <option value="multisucursal">
+                                Plan Multisucursal (mensual)
                             </option>
                         </select>
                     </div>
@@ -242,15 +244,10 @@ const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY || "";
         "service",
     ) as HTMLSelectElement;
 
-    // Mapeo entre data-service (CTAs de Pricing) y opciones del select
-    const serviceMap: Record<string, string> = {
-        audit: "auditoria",
-        migration: "migracion-m365",
-    };
-
+    // Las claves de data-service (CTAs de Pricing) coinciden con los value del select
     function applyService(key: string) {
-        if (serviceSelect && serviceMap[key]) {
-            serviceSelect.value = serviceMap[key];
+        if (serviceSelect) {
+            serviceSelect.value = key;
         }
     }
 
