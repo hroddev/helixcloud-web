@@ -10,17 +10,7 @@
       "statusCode": 301
     },
     {
-      "route": "/servicios/microsoft-365/",
-      "redirect": "/servicios/seguridad-microsoft-365/",
-      "statusCode": 301
-    },
-    {
       "route": "/servicios/auditoria-cloud",
-      "redirect": "/#pricing",
-      "statusCode": 301
-    },
-    {
-      "route": "/servicios/auditoria-cloud/",
       "redirect": "/#pricing",
       "statusCode": 301
     },
@@ -30,17 +20,7 @@
       "statusCode": 301
     },
     {
-      "route": "/servicios/migracion-azure/",
-      "redirect": "/",
-      "statusCode": 301
-    },
-    {
       "route": "/servicios/devops-automatizacion",
-      "redirect": "/",
-      "statusCode": 301
-    },
-    {
-      "route": "/servicios/devops-automatizacion/",
       "redirect": "/",
       "statusCode": 301
     }
