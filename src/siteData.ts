@@ -60,6 +60,17 @@ export const siteData = {
             href: "#contact",
             cta: "Solicitar auditoría",
         },
+        {
+            key: "migracion-hibrida",
+            name: "Migración a la Nube / Híbrida",
+            price: "Cotización a medida",
+            period: "Según servidores y volumen de datos",
+            description:
+                "Migramos tus servidores on-premise a la nube (Azure/AWS) o a un ambiente híbrido, con un plan por fases y sin downtime en horario laboral.",
+            notIncluded: "No incluye el costo de los servicios cloud del proveedor (Azure/AWS) — se cotiza aparte según el diseño.",
+            href: "/servicios/migracion-hibrida/",
+            cta: "Solicitar diagnóstico de migración",
+        },
     ],
 
     // --- Monthly plans (mensualidad) ---
@@ -106,7 +117,7 @@ export const siteData = {
         {
             step: "2",
             title: "Proyecto",
-            description: "Ejecutamos el paquete que corresponda: seguridad M365 o red multisucursal.",
+            description: "Ejecutamos el paquete que corresponda: seguridad M365, red multisucursal o migración híbrida.",
         },
         {
             step: "3",
@@ -212,6 +223,38 @@ export const siteData = {
             priceNote: "/mes",
             notIncluded: "No incluye el hardware de firewall/SD-WAN — se cotiza según cantidad de sedes.",
             ctaLabel: "Solicitar propuesta",
+            ctaHref: "#contact",
+        },
+        {
+            slug: "migracion-hibrida",
+            navLabel: "Migración Híbrida",
+            title: "Migración de Servidores On-Premise a la Nube o Híbrido en Panamá | Helix Cloud",
+            metaDescription:
+                "Migración de servidores on-premise a Azure/AWS o a un ambiente híbrido para empresas en Panamá, sin downtime y con plan de rollback. Cotización a medida.",
+            heading: "Migración a la Nube o a un Ambiente Híbrido",
+            tagline: "Llevamos tus servidores locales a la nube o a un esquema híbrido, con un plan por fases y sin detener tu operación.",
+            serviceType: "Cloud Migration",
+            overview: [
+                "Muchas empresas siguen dependiendo de servidores locales que ya cumplieron su vida útil, sin respaldo confiable ni plan de continuidad si el hardware falla.",
+                "Evaluamos tu infraestructura actual (servidores, aplicaciones, dependencias) y diseñamos una migración por fases a la nube o a un esquema híbrido — priorizando lo que menos riesgo agrega primero, con backups verificados y un plan de rollback en cada fase.",
+            ],
+            breakdown: [
+                { title: "Evaluación y discovery", description: "Inventario de servidores, aplicaciones, dependencias y capacidad actual para dimensionar la migración." },
+                { title: "Diseño de arquitectura", description: "Arquitectura en la nube o híbrida (VPN/conectividad con tu sitio local), identidad y seguridad desde el diseño." },
+                { title: "Migración por fases", description: "Rehost, replatform o mantener on-premise según cada carga de trabajo, empezando por lo que menos riesgo agrega." },
+                { title: "Validación y documentación", description: "Backups verificados, pruebas de failover y documentación completa del nuevo entorno para tu equipo." },
+            ],
+            techStack: ["Azure", "AWS", "VMware", "Hyper-V", "VPN Site-to-Site"],
+            benefits: [
+                "Migración por fases, sin downtime en horario laboral",
+                "Plan de rollback en cada fase",
+                "Ambientes híbridos cuando no todo puede (o debe) moverse a la nube",
+                "Documentación completa del entorno resultante",
+            ],
+            price: "Cotización a medida",
+            priceNote: "Según servidores y volumen de datos",
+            notIncluded: "No incluye el costo de los servicios cloud del proveedor (Azure/AWS) — se cotiza aparte según el diseño.",
+            ctaLabel: "Solicitar diagnóstico de migración",
             ctaHref: "#contact",
         },
     ],
